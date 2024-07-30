@@ -1,5 +1,3 @@
-Certainly! Here are some common SQL query-related interview questions along with detailed answers:
-
 ### 1. **What is SQL?**
 
 **Answer:**
