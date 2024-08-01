@@ -25,8 +25,8 @@ Bonus Table
 Sample Table – Title
 |WORKER_REF_ID	|WORKER_TITLE	|AFFECTED_FROM|
 |-----|----------|----------|
-|1	|Manager	v2023-02-20 00:00:00|
-|2	|Executive	v2023-06-11 00:00:00|
+|1	|Manager	|2023-02-20 00:00:00|
+|2	|Executive	|2023-06-11 00:00:00|
 |8	|Executive	|2023-06-11 00:00:00|
 |5	|Manager	|2023-06-11 00:00:00|
 |4	|Asst. Manager	|2023-06-11 00:00:00|
@@ -164,11 +164,12 @@ Select distinct DEPARTMENT from Worker;
 ```
 SQL query executed successfully!
 Details
-DEPARTMENT
+|DEPARTMENT|
 |-----|
-HR
-Admin
-Account
+|HR|
+|Admin|
+|Account|
+
 Q-4. Write an SQL query to print the first three characters of  FIRST_NAME from the Worker table.
 Ans.
 
@@ -181,16 +182,17 @@ Select substring(FIRST_NAME,1,3) from Worker;
 ```
 SQL query executed successfully!
 Details
-substring(FIRST_NAME,1,3)
+|substring(FIRST_NAME,1,3)|
 |-----|
-Mon
-Nih
-Vis
-Ami
-Viv
-Vip
-Sat
-Gee
+|Mon|
+|Nih|
+|Vis|
+|Ami|
+|Viv|
+|Vip|
+|Sat|
+|Gee|
+
 Q-5. Write an SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from the Worker table.
 Ans.
 
@@ -203,9 +205,10 @@ SELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh';
 ```
 SQL query executed successfully!
 Details
-INSTR(FIRST_NAME, 'a')
+|INSTR(FIRST_NAME, 'a')|
 |-----|
-5
+|5|
+
 Q-6. Write an SQL query to print the FIRST_NAME from the Worker table after removing white spaces from the right side.
 Ans.
 
