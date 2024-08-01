@@ -10,25 +10,30 @@ Sample Table – Worker
 |006	|Vipul	|Diwan	|200000	|2021-06-11 09:00:00|	Account|
 |007	|Satish	|Kumar	|75000	|2021-01-20 09:00:00|	Account|
 |008	|Geetika	|Chauhan	|90000	|2021-04-11 09:00:00|	Admin|
+
 Worker Table
 Sample Table – Bonus
-WORKER_REF_ID	BONUS_DATE	BONUS_AMOUNT
-1	2023-02-20 00:00:00	5000
-2	2023-06-11 00:00:00	3000
-3	2023-02-20 00:00:00	4000
-1	2023-02-20 00:00:00	4500
-2	2023-06-11 00:00:00	3500
+|WORKER_REF_ID	|BONUS_DATE	|BONUS_AMOUNT|
+|-----|----------|----------|
+|1	|2023-02-20 00:00:00	|5000|
+|2	|2023-06-11 00:00:00	|3000|
+|3	|2023-02-20 00:00:00	|4000|
+|1	|2023-02-20 00:00:00	|4500|
+|2	|2023-06-11 00:00:00	|3500|
+
 Bonus Table
 Sample Table – Title
-WORKER_REF_ID	WORKER_TITLE	AFFECTED_FROM
-1	Manager	2023-02-20 00:00:00
-2	Executive	2023-06-11 00:00:00
-8	Executive	2023-06-11 00:00:00
-5	Manager	2023-06-11 00:00:00
-4	Asst. Manager	2023-06-11 00:00:00
-7	Executive	2023-06-11 00:00:00
-6	Lead	2023-06-11 00:00:00
-3	Lead	2023-06-11 00:00:00
+|WORKER_REF_ID	|WORKER_TITLE	|AFFECTED_FROM|
+|-----|----------|----------|
+|1	|Manager	v2023-02-20 00:00:00|
+|2	|Executive	v2023-06-11 00:00:00|
+|8	|Executive	|2023-06-11 00:00:00|
+|5	|Manager	|2023-06-11 00:00:00|
+|4	|Asst. Manager	|2023-06-11 00:00:00|
+|7	|Executive	|2023-06-11 00:00:00|
+|6	|Lead	|2023-06-11 00:00:00|
+|3	|Lead	|2023-06-11 00:00:00|
+
 Title Table
 To prepare the sample data, run the following queries in your database query executor or SQL command line. We’ve tested them with the latest version of MySQL Server and MySQL Workbench query browser. You can download these tools and install them to execute the SQL queries. However, these queries will run fine in any online MySQL compiler, you may use them.
 
@@ -113,15 +118,17 @@ Select FIRST_NAME AS WORKER_NAME from Worker;
 ```
 SQL query executed successfully!
 Details
-WORKER_NAME
-Monika
-Niharika
-Vishal
-Amitabh
-Vivek
-Vipul
-Satish
-Geetika
+|WORKER_NAME|
+|-----|
+|Monika|
+|Niharika|
+|Vishal|
+|Amitabh|
+|Vivek|
+|Vipul|
+|Satish|
+|Geetika|
+
 Q-2. Write an SQL query to fetch “FIRST_NAME” from the Worker table in upper case.
 Ans.
 
@@ -134,19 +141,20 @@ Select upper(FIRST_NAME) from Worker;
 ```
 SQL query executed successfully!
 Details
-upper(FIRST_NAME)
-MONIKA
-NIHARIKA
-VISHAL
-AMITABH
-VIVEK
-VIPUL
-SATISH
-GEETIKA
+|upper(FIRST_NAME)
+|-----|
+|MONIKA|
+|NIHARIKA|
+|VISHAL|
+|AMITABH|
+|VIVEK|
+|VIPUL|
+|SATISH|
+|GEETIKA|
+
 Q-3. Write an SQL query to fetch unique values of DEPARTMENT from the Worker table.
 Ans.
 
-Ezoic
 The required query is:
 
 Query #3
@@ -157,6 +165,7 @@ Select distinct DEPARTMENT from Worker;
 SQL query executed successfully!
 Details
 DEPARTMENT
+|-----|
 HR
 Admin
 Account
@@ -173,6 +182,7 @@ Select substring(FIRST_NAME,1,3) from Worker;
 SQL query executed successfully!
 Details
 substring(FIRST_NAME,1,3)
+|-----|
 Mon
 Nih
 Vis
@@ -194,6 +204,7 @@ SELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh';
 SQL query executed successfully!
 Details
 INSTR(FIRST_NAME, 'a')
+|-----|
 5
 Q-6. Write an SQL query to print the FIRST_NAME from the Worker table after removing white spaces from the right side.
 Ans.
@@ -208,6 +219,7 @@ Select RTRIM(FIRST_NAME) from Worker;
 SQL query executed successfully!
 Details
 RTRIM(FIRST_NAME)
+|-----|
 Monika
 Niharika
 Vishal
@@ -229,6 +241,7 @@ Select LTRIM(DEPARTMENT) from Worker;
 SQL query executed successfully!
 Details
 LTRIM(DEPARTMENT)
+|-----|
 HR
 Admin
 HR
@@ -266,6 +279,7 @@ Select REPLACE(FIRST_NAME,'a','A') from Worker;
 SQL query executed successfully!
 Details
 REPLACE(FIRST_NAME,'a','A')
+|-----|
 MonikA
 NihArikA
 VishAl
@@ -287,6 +301,7 @@ SELECT FIRST_NAME || ' ' || LAST_NAME AS COMPLETE_NAME FROM Worker;
 SQL query executed successfully!
 Details
 COMPLETE_NAME
+|-----|
 Monika Arora
 Niharika Verma
 Vishal Singhal
@@ -307,15 +322,16 @@ Select * from Worker order by FIRST_NAME asc;
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
-4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
-8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-1	Monika	Arora	100000	2021-02-20 09:00:00	HR
-2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
-7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
-6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
-3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
-5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
+|4	|Amitabh	|Singh	|500000	|2021-02-20 09:00:00	|Admin|
+|8	|Geetika	|Chauhan	|90000	|2021-04-11 09:00:00	|Admin|
+|1	|Monika	|Arora	|100000	|2021-02-20 09:00:00	|HR|
+|2	|Niharika	|Verma	|80000	|2021-06-11 09:00:00	|Admin|
+|7	|Satish	|Kumar	|75000	|2021-01-20 09:00:00	|Account|
+|6	|Vipul	|Diwan	|200000	|2021-06-11 09:00:00	|Account|
+|3	|Vishal	|Singhal	|300000	|2021-02-20 09:00:00	|HR|
+|5	|Vivek	|Bhati	|500000	|2021-06-11 09:00:00	|Admin|
 Q-12. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
 Ans.
 
@@ -329,21 +345,23 @@ Select * from Worker order by FIRST_NAME asc, DEPARTMENT desc;
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
-4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
-8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-1	Monika	Arora	100000	2021-02-20 09:00:00	HR
-2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
-7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
-6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
-3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
-5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
+
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
+|4	|Amitabh	|Singh	|500000	|2021-02-20 09:00:00|	Admin|
+|8	|Geetika	|Chauhan	|90000	|2021-04-11 09:00:00|	Admin|
+|1	|Monika	|Arora	|100000	|2021-02-20 09:00:00|	HR|
+|2	|Niharika	|Verma	|80000	|2021-06-11 09:00:00|	Admin|
+|7	|Satish	|Kumar	|75000	|2021-01-20 09:00:00|	Account|
+|6	|Vipul	|Diwan	|200000	|2021-06-11 09:00:00|	Account|
+|3	|Vishal	|Singhal	|300000	|2021-02-20 09:00:00|	HR|
+|5	|Vivek	|Bhati	|500000	|2021-06-11 09:00:00|	Admin|
+
 Q-13. Write an SQL query to print details for Workers with the first names “Vipul” and “Satish” from the Worker table.
 Ans.
 
 The required query is:
 
-Ezoic
 Query #13
 RunShow Solution
 ```sql
