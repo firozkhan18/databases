@@ -338,7 +338,7 @@ Details
 Q-12. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
 Ans.
 
-Ezoic
+
 The required query is:
 
 Query #12
@@ -372,9 +372,11 @@ Select * from Worker where FIRST_NAME in ('Vipul','Satish');
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
-6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
-7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
+|6	|Vipul	|Diwan|	200000|	2021-06-11 09:00:00|	Account|
+|7	|Satish	|Kumar|	75000|	2021-01-20 09:00:00|	Account|
+
 Q-14. Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from the Worker table.
 Ans.
 
@@ -386,7 +388,8 @@ Select * from Worker where FIRST_NAME not in ('Vipul','Satish');
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
@@ -396,7 +399,7 @@ WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
 Q-15. Write an SQL query to print details of Workers with DEPARTMENT name as “Admin”.
 Ans.
 
-Ezoic
+
 The required query is:
 
 Query #15
@@ -406,7 +409,8 @@ Select * from Worker where DEPARTMENT like 'Admin%';
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
@@ -416,7 +420,7 @@ Ans.
 
 The required query is:
 
-Ezoic
+
 Query #16
 RunShow Solution
 ```sql
@@ -424,7 +428,8 @@ Select * from Worker where FIRST_NAME like '%a%';
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
@@ -443,7 +448,8 @@ Select * from Worker where FIRST_NAME like '%a';
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
@@ -459,7 +465,8 @@ Select * from Worker where FIRST_NAME like '_____h';
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
 Q-19. Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
 Ans.
@@ -473,7 +480,8 @@ Select * from Worker where SALARY between 100000 and 500000;
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
@@ -491,14 +499,15 @@ SELECT * FROM Worker WHERE strftime('%Y', JOINING_DATE) = '2021' AND strftime('%
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 12 Medium SQL Query Interview Questions / Answers for Practice
 At this point, you have acquired a good understanding of the basics of SQL, let’s move on to some more intermediate-level SQL query interview questions. These questions will require us to use more advanced SQL syntax and concepts, such as GROUP BY, HAVING, and ORDER BY.
 
-Ezoic
+
 Q-21. Write an SQL query to fetch the count of employees working in the department ‘Admin’.
 Ans.
 
@@ -516,7 +525,7 @@ COUNT(*)
 Q-22. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
 Ans.
 
-Ezoic
+
 The required query is:
 
 Query #22
@@ -536,7 +545,7 @@ Ans.
 
 The required query is:
 
-Ezoic
+
 Query #23
 RunShow Solution
 ```sql
@@ -566,7 +575,7 @@ Vivek	Manager
 Q-25. Write an SQL query to fetch duplicate records having matching data in some fields of a table.
 Ans.
 
-Ezoic
+
 The required query is:
 
 Query #25
@@ -584,7 +593,7 @@ Ans.
 
 The required query is:
 
-Ezoic
+
 Query #26
 RunShow Solution
 ```sql
@@ -592,7 +601,8 @@ SELECT * FROM Worker WHERE WORKER_ID % 2 <> 0;
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
@@ -609,7 +619,8 @@ SELECT * FROM Worker WHERE WORKER_ID % 2 = 0;
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
@@ -640,7 +651,8 @@ SELECT * FROM Worker INTERSECT SELECT * FROM WorkerClone;
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
@@ -692,7 +704,8 @@ LIMIT 10;             -- Limit the result to the top 10 records
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
@@ -709,7 +722,7 @@ Ans.
 
 MySQL query to find the nth highest salary:
 
-Ezoic
+
 Query #33
 RunShow Solution
 ```sql
@@ -762,7 +775,7 @@ Ans.
 
 The required query is:
 
-Ezoic
+
 Query #35
 RunShow Solution
 ```sql
@@ -790,7 +803,7 @@ max(Salary)
 Q-37. Write an SQL query to show one row twice in the results from a table.
 Ans.
 
-Ezoic
+
 The required query is:
 
 Query #37
@@ -830,7 +843,8 @@ INNER JOIN WorkerClone wc ON w.WORKER_ID = wc.WORKER_ID;
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
@@ -839,7 +853,9 @@ WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
@@ -860,14 +876,15 @@ SELECT * FROM WORKER WHERE WORKER_ID <= (SELECT count(WORKER_ID)/2 from Worker);
 ```
 SQL query executed successfully!
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 Practicing SQL query interview questions is a great way to improve your understanding of the language and become more proficient in SQL. In addition to improving your technical skills, practicing SQL query questions can help you advance your career. Many employers seek candidates with strong SQL skills, so demonstrating your proficiency can get you a competitive edge.
 
-Ezoic
+
 Q-40. Write an SQL query to fetch the departments that have less than five people in them.
 Ans.
 
@@ -887,7 +904,7 @@ HR	2
 Q-41. Write an SQL query to show all departments along with the number of people in there.
 Ans.
 
-Ezoic
+
 The following query returns the expected result:
 
 Query #41
@@ -946,15 +963,18 @@ SELECT * FROM Worker ORDER BY WORKER_ID DESC LIMIT 5;
 ```
 SQL query executed successfully!
 
-Ezoic
+
 Details
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
-WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
+
+|WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
+|-----|-----|-----|-----|-----|-----|
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
@@ -1035,7 +1055,7 @@ SALARY
 Q-49. Write an SQL query to fetch departments along with the total salaries paid for each of them.
 Ans.
 
-Ezoic
+
 The required query is:
 
 Query #49
