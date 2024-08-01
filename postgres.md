@@ -74,3 +74,5 @@ psql -h 127.0.0.1 -U postgres firozdb < D:\sqlex\northwindexbackup.sql
 
 
 Check Permissions: Ensure you have the necessary permissions to access and modify environment variables.
+
+https://www.w3resource.com/sql-exercises/
