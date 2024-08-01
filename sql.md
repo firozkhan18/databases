@@ -121,7 +121,7 @@ Sample table: employees
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 ```
 Sample Output:
-
+```
      full_name     | salary
 -------------------+---------
  David Austin      | 4800.00
@@ -130,11 +130,14 @@ Sample Output:
  Alexander Khoo    | 3100.00
 .....
 (50 rows)
+```
 Click me to see the solution
 
 2. From the following table, write a  SQL query to find those employees whose salary is higher than 8000. Return first name, last name and department number and salary.
 
 Sample table: employees
+
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -246,8 +249,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  first_name | last_name  | department_id |  salary
 ------------+------------+---------------+----------
  Steven     | King       |            90 | 24000.00
@@ -255,12 +259,15 @@ Sample Output:
  Lex        | De Haan    |            90 | 17000.00
  Alexander  | Hunold     |            60 |  9000.00
 .....
+```
 (33 rows)
+
 Click me to see the solution
 
 3. From the following table, write a  SQL query to find those employees whose last name is "McEwen". Return first name, last name and department ID.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -372,17 +379,21 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
 
+```
  first_name | last_name | department_id
 ------------+-----------+---------------
  Allan      | McEwen    |            80
+```
 (1 row)
 Click me to see the solution
 
 4. From the following table, write a  SQL query to identify employees who do not have a department number. Return employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary,commission_pct, manager_id and department_id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -494,10 +505,12 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
 employee_id | first_name | last_name | email | phone_number | hire_date | job_id | salary | commission_pct | manager_id | department_id
 -------------+------------+-----------+-------+--------------+-----------+--------+--------+----------------+------------+-------------
+```
 (0 rows)
 
 Click me to see the solution
@@ -505,6 +518,7 @@ Click me to see the solution
 5. From the following table, write a  SQL query to find the details of 'Marketing' department. Return all fields.
 
 Sample table: departments
+```
 +---------------+----------------------+------------+-------------+
 | DEPARTMENT_ID | DEPARTMENT_NAME      | MANAGER_ID | LOCATION_ID |
 +---------------+----------------------+------------+-------------+
@@ -536,17 +550,20 @@ Sample table: departments
 |           260 | Recruiting           |          0 |        1700 |
 |           270 | Payroll              |          0 |        1700 |
 +---------------+----------------------+------------+-------------+
+```
 Sample Output:
-
+```
  department_id | department_name | manager_id | location_id
 ---------------+-----------------+------------+-------------
             20 | Marketing       |        201 |        1800
+```
 (1 row)
 Click me to see the solution
 
 6. From the following table, write a  SQL query to find those employees whose first name does not contain the letter ‘M’. Sort the result-set in ascending order by department ID. Return full name (first and last name together), hire_date, salary and department_id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -658,14 +675,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
      full_name     | hire_date  |  salary  | department_id
 -------------------+------------+----------+---------------
  Kimberely Grant   | 2007-05-24 |  7000.00 |             0
  Jennifer Whalen   | 2003-09-17 |  4400.00 |            10
  Pat Fay           | 2005-08-17 |  6000.00 |            20
  Guy Himuro        | 2006-11-15 |  2600.00 |            30
+```
 .....
 (100 rows)
 Click me to see the solution
@@ -673,6 +692,7 @@ Click me to see the solution
 7. From the following table, write a  SQL query to find those employees who earn between 8000 and 12000 (Begin and end values are included.) and get some commission. These employees joined before ‘1987-06-05’ and were not included in the department numbers 40, 120 and 70. Return all fields.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -784,14 +804,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  employee_id | first_name  | last_name  |  email   |    phone_number    | hire_date  |   job_id   |  salary  | commission_pct | manager_id | department_id
 -------------+-------------+------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------
          103 | Alexander   | Hunold     | AHUNOLD  | 590.423.4567       | 2006-01-03 | IT_PROG    |  9000.00 |           0.00 |        102 |            60
          108 | Nancy       | Greenberg  | NGREENBE | 515.124.4569       | 2002-08-17 | FI_MGR     | 12000.00 |           0.00 |        101 |           100
          109 | Daniel      | Faviet     | DFAVIET  | 515.124.4169       | 2002-08-16 | FI_ACCOUNT |  9000.00 |           0.00 |        108 |           100
          110 | John        | Chen       | JCHEN    | 515.124.4269       | 2005-09-28 | FI_ACCOUNT |  8200.00 |           0.00 |        108 |           100
+```
 .....
 (30 rows)                                                                               
 Click me to see the solution
@@ -799,6 +821,7 @@ Click me to see the solution
 8. From the following table, write a  SQL query to find those employees who do not earn any commission. Return full name (first and last name), and salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -910,16 +933,19 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  full_name | salary
 -----------+--------
+```
 (0 rows)
 Click me to see the solution
 
 9. From the following table, write a  SQL query to find the employees whose salary is in the range 9000,17000 (Begin and end values are included). Return full name, contact details and salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1031,14 +1057,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
      full_name     |        contact_details        | remuneration
 -------------------+-------------------------------+--------------
  Neena Kochhar     | 515.123.4568 - NKOCHHAR       |     17000.00
  Lex De Haan       | 515.123.4569 - LDEHAAN        |     17000.00
  Alexander Hunold  | 590.423.4567 - AHUNOLD        |      9000.00
  Nancy Greenberg   | 515.124.4569 - NGREENBE       |     12000.00
+```
 .....
 (26 rows)
 Click me to see the solution
@@ -1046,6 +1074,7 @@ Click me to see the solution
 10. From the following table, write a  SQL query to find the employees whose first name ends with the letter ‘m’. Return the first and last name, and salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1157,20 +1186,23 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  first_name | last_name | salary
 ------------+-----------+---------
  Adam       | Fripp     | 8200.00
  Payam      | Kaufling  | 7900.00
  William    | Smith     | 7400.00
  William    | Gietz     | 8300.00
+```
 (4 rows)
 Click me to see the solution
 
 11. From the following table, write a  SQL query to find those employees whose salaries are not between 7000 and 15000 (Begin and end values are included). Sort the result-set in ascending order by the full name (first and last). Return full name and salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1282,15 +1314,17 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
 
-
+```
        name        |  salary
 -------------------+----------
  Alana Walsh       |  3100.00
  Alexander Khoo    |  3100.00
  Alexis Bull       |  4100.00
  Amit Banda        |  6200.00
+```
  .....
 (63 rows)
 Click me to see the solution
@@ -1298,6 +1332,7 @@ Click me to see the solution
 12. From the following table, write a  SQL query to find those employees who were hired between November 5th, 2007 and July 5th, 2009. Return full name (first and last), job id and hire date.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1409,14 +1444,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
     full_name     |   job_id   | hire_date
 ------------------+------------+------------
  Luis Popp        | FI_ACCOUNT | 2007-12-07
  Kevin Mourgos    | ST_MAN     | 2007-11-16
  Steven Markle    | ST_CLERK   | 2008-03-08
  Ki Gee           | ST_CLERK   | 2007-12-12
+```
 .....
 (16 rows)
 Click me to see the solution
@@ -1424,6 +1461,7 @@ Click me to see the solution
 13. From the following table, write a  SQL query to find those employees who work either in department 70 or 90. Return full name (first and last name), department id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1535,20 +1573,23 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
    full_name   | department_id
 ---------------+---------------
  Steven King   |            90
  Neena Kochhar |            90
  Lex De Haan   |            90
  Hermann Baer  |            70
+```
 (4 rows)
 Click me to see the solution
 
 14. From the following table, write a  SQL query to find those employees who work under a manager. Return full name (first and last name), salary, and manager ID.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1660,20 +1701,23 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
      full_name     |  salary  | manager_id
 -------------------+----------+------------
  Neena Kochhar     | 17000.00 |        100
  Lex De Haan       | 17000.00 |        100
  Alexander Hunold  |  9000.00 |        102
  Bruce Ernst       |  6000.00 |        103
+```
 .....
 Click me to see the solution
 
 15. From the following table, write a  SQL query to find the employees who were hired before June 21st, 2002. Return all fields.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1785,8 +1829,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
 employee_id | first_name | last_name |  email   | phone_number | hire_date  |   job_id   |  salary  | commission_pct | manager_id | department_id
 -------------+------------+-----------+----------+--------------+------------+------------+----------+----------------+------------+---------------
          102 | Lex        | De Haan   | LDEHAAN  | 515.123.4569 | 2001-01-13 | AD_VP      | 17000.00 |           0.00 |        100 |            90
@@ -1794,6 +1839,7 @@ employee_id | first_name | last_name |  email   | phone_number | hire_date  |   
          204 | Hermann    | Baer      | HBAER    | 515.123.8888 | 2002-06-07 | PR_REP     | 10000.00 |           0.00 |        101 |            70
          205 | Shelley    | Higgins   | SHIGGINS | 515.123.8080 | 2002-06-07 | AC_MGR     | 12000.00 |           0.00 |        101 |           110
          206 | William    | Gietz     | WGIETZ   | 515.123.8181 | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110
+```
 (5 rows)
 
 Click me to see the solution
@@ -1801,6 +1847,7 @@ Click me to see the solution
 16. From the following table, write a  SQL query to find the employees whose managers hold the ID 120, 103, or 145. Return first name, last name, email, salary and manager ID.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -1912,14 +1959,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  first_name  |  last_name  |  email   |  salary  | manager_id
 -------------+-------------+----------+----------+------------
  Bruce       | Ernst       | BERNST   |  6000.00 |        103
  David       | Austin      | DAUSTIN  |  4800.00 |        103
  Valli       | Pataballa   | VPATABAL |  4800.00 |        103
  Diana       | Lorentz     | DLORENTZ |  4200.00 |        103
+```
 .....
 (18 rows)
 Click me to see the solution
@@ -1927,6 +1976,7 @@ Click me to see the solution
 17. From the following table, write a  SQL query to find employees whose first names contain the letters D, S, or N. Sort the result-set in descending order by salary. Return all fields.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2038,14 +2088,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  employee_id | first_name | last_name |  email   |    phone_number    | hire_date  |   job_id   |  salary  | commission_pct | manager_id | department_id
 -------------+------------+-----------+----------+--------------------+------------+------------+----------+----------------+------------+---------------
          100 | Steven     | King      | SKING    | 515.123.4567       | 2003-06-17 | AD_PRES    | 24000.00 |           0.00 |          0 |            90
          101 | Neena      | Kochhar   | NKOCHHAR | 515.123.4568       | 2005-09-21 | AD_VP      | 17000.00 |           0.00 |        100 |            90
          205 | Shelley    | Higgins   | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12000.00 |           0.00 |        101 |           110
          108 | Nancy      | Greenberg | NGREENBE | 515.124.4569       | 2002-08-17 | FI_MGR     | 12000.00 |           0.00 |        101 |           100
+```
 .....
 (26 rows)
 Click me to see the solution
@@ -2053,6 +2105,7 @@ Click me to see the solution
 18. From the following table, write a  SQL query to find those employees who earn above 11000 or the seventh character in their phone number is 3. Sort the result-set in descending order by first name. Return full name (first name and last name), hire date, commission percentage, email, and telephone separated by '-', and salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2164,14 +2217,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
      full_name     | hire_date  | commission_pct |        contact_details         |  salary
 -------------------+------------+----------------+--------------------------------+----------
  William Gietz     | 2002-06-07 |           0.00 | WGIETZ -  515.123.8181         |  8300.00
  Valli Pataballa   | 2006-02-05 |           0.00 | VPATABAL -  590.423.4560       |  4800.00
  Susan Mavris      | 2002-06-07 |           0.00 | SMAVRIS -  515.123.7777        |  6500.00
  Steven King       | 2003-06-17 |           0.00 | SKING -  515.123.4567          | 24000.00
+```
 .....
 (25 rows)
 Click me to see the solution
@@ -2179,6 +2234,7 @@ Click me to see the solution
 19. From the following table, write a  SQL query to find those employees whose first name contains a character 's' in the third position. Return first name, last name and department id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2290,8 +2346,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  first_name  | last_name | department_id
 -------------+-----------+---------------
  Jose Manuel | Urman     |           100
@@ -2299,12 +2356,14 @@ Sample Output:
  Joshua      | Patel     |            50
  Lisa        | Ozer      |            80
  Susan       | Mavris    |            40
+```
 (5 rows)
 Click me to see the solution
 
 20. From the following table, write a  SQL query to find those employees work in the departments that are not part of the department 50 or 30 or 80. Return employee_id, first_name,job_id, department_id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2416,8 +2475,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  employee_id | first_name  |   job_id   | department_id
 -------------+-------------+------------+---------------
          100 | Steven      | AD_PRES    |            90
@@ -2425,6 +2485,7 @@ Sample Output:
          102 | Lex         | AD_VP      |            90
          103 | Alexander   | IT_PROG    |            60
          104 | Bruce       | IT_PROG    |            60
+```
 .....
 (22 rows)
 Click me to see the solution
@@ -2432,6 +2493,7 @@ Click me to see the solution
 21. From the following table, write a  SQL query to find the employees whose department numbers are included in 30, 40, or 90. Return employee id, first name, job id, department id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2543,20 +2605,22 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  employee_id | first_name |  job_id  | department_id
 -------------+------------+----------+---------------
          100 | Steven     | AD_PRES  |            90
          101 | Neena      | AD_VP    |            90
          102 | Lex        | AD_VP    |            90
          114 | Den        | PU_MAN   |            30
+```
 .....
 (10 rows)
 Click me to see the solution
 
 22. From the following table, write a  SQL query to find those employees who worked more than two jobs in the past. Return employee id.
-
+```
 +-------------+------------+------------+------------+---------------+
 | EMPLOYEE_ID | START_DATE | END_DATE   | JOB_ID     | DEPARTMENT_ID |
 +-------------+------------+------------+------------+---------------+
@@ -2571,19 +2635,22 @@ Click me to see the solution
 |         176 | 2007-01-01 | 2007-12-31 | SA_MAN     |            80 |
 |         200 | 2002-07-01 | 2006-12-31 | AC_ACCOUNT |            90 |
 +-------------+------------+------------+------------+---------------+
+```
 Sample Output:
-
+```
  employee_id
 -------------
          101
          176
          200
+```
 (3 rows)
 Click me to see the solution
 
 23. From the following table, write a  SQL query to count the number of employees, the sum of all salary, and difference between the highest salary and lowest salaries by each job id. Return job_id, count, sum, salary_difference.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2695,8 +2762,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
    job_id   | count |    sum    | salary_difference
 ------------+-------+-----------+-------------------
  AC_ACCOUNT |     1 |   8300.00 |              0.00
@@ -2704,6 +2772,7 @@ Sample Output:
  IT_PROG    |     5 |  28800.00 |           4800.00
  SA_MAN     |     5 |  61000.00 |           3500.00
  AD_PRES    |     1 |  24000.00 |              0.00
+```
 .....
 (19 rows)
 Click me to see the solution
@@ -2711,6 +2780,7 @@ Click me to see the solution
 24. From the following table, write a  SQL query to find each job ids where two or more employees worked for more than 300 days. Return job id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2822,18 +2892,21 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
    job_id
 ------------
  AC_ACCOUNT
  ST_CLERK
+```
 (2 rows)
 Click me to see the solution
 
 25. From the following table, write a  SQL query to count the number of cities in each country. Return country ID and number of cities.
 
 Sample table : locations
+```
 +-------------+------------------------------------------+-------------+---------------------+-------------------+------------+
 | LOCATION_ID | STREET_ADDRESS                           | POSTAL_CODE | CITY                | STATE_PROVINCE    | COUNTRY_ID |
 +-------------+------------------------------------------+-------------+---------------------+-------------------+------------+
@@ -2861,8 +2934,9 @@ Sample table : locations
 |        3100 | Pieter Breughelstraat 837                | 3029SK      | Utrecht             | Utrecht           | NL         |
 |        3200 | Mariano Escobedo 9991                    | 11932       | Mexico City         | Distrito Federal, | MX         |
 +-------------+------------------------------------------+-------------+---------------------+-------------------+------------+
+```
 Sample Output:
-
+```
  country_id | count
 ------------+-------
  CH         |     2
@@ -2870,6 +2944,7 @@ Sample Output:
  US         |     4
  AU         |     1
  IT         |     2
+```
 .....
 (15 rows)
 Click me to see the solution
@@ -2877,6 +2952,7 @@ Click me to see the solution
 26. From the following table, write a  SQL query to count the number of employees worked under each manager. Return manager ID and number of employees.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -2988,8 +3064,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  manager_id | count
 ------------+-------
         205 |     1
@@ -2997,6 +3074,7 @@ Sample Output:
         120 |     8
         101 |     5
         103 |     4
+```
 .....
 (19 rows)
 Click me to see the solution
@@ -3004,6 +3082,7 @@ Click me to see the solution
 27. From the following table, write a  SQL query to find all jobs. Sort the result-set in descending order by job title. Return all fields.
 
 Sample table : jobs
+```
 +------------+---------------------------------+------------+------------+
 | JOB_ID     | JOB_TITLE                       | MIN_SALARY | MAX_SALARY |
 +------------+---------------------------------+------------+------------+
@@ -3027,21 +3106,24 @@ Sample table : jobs
 | HR_REP     | Human Resources Representative  |       4000 |       9000 |
 | PR_REP     | Public Relations Representative |       4500 |      10500 |
 +------------+---------------------------------+------------+------------+
+```
 Sample Output:
 
-
+```
 job_id    |job_title                      |min_salary|max_salary|
 ----------|-------------------------------|----------|----------|
 ST_MAN    |Stock Manager                  |      5500|      8500|
 ST_CLERK  |Stock Clerk                    |      2000|      5000|
 SH_CLERK  |Shipping Clerk                 |      2500|      5500|
 SA_REP    |Sales Representative           |      6000|     12000|
+```
 .....
 Click me to see the solution
 
 28. From the following table, write a  SQL query to find all those employees who are either Sales Representatives or Salesmen. Return first name, last name and hire date.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -3153,8 +3235,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  first_name  | last_name  | hire_date
 -------------+------------+------------
  John        | Russell    | 2004-10-01
@@ -3162,6 +3245,7 @@ Sample Output:
  Alberto     | Errazuriz  | 2005-03-10
  Gerald      | Cambrault  | 2007-10-15
  Eleni       | Zlotkey    | 2008-01-29
+```
 .....
 (35 rows)
 Click me to see the solution
@@ -3169,6 +3253,7 @@ Click me to see the solution
 29. From the following table, write a  SQL query to calculate the average salary of employees who receive a commission percentage for each department. Return department id, average salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -3280,14 +3365,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  department_id |          avg
 ---------------+------------------------
             90 |     19333.333333333333
             20 |  9500.0000000000000000
            100 |  8600.0000000000000000
             40 |  6500.0000000000000000
+```
 .....
 (12 rows)
 Click me to see the solution
@@ -3295,6 +3382,7 @@ Click me to see the solution
 30. From the following table, write a  SQL query to find the departments where any manager manages four or more employees. Return department_id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -3406,8 +3494,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  department_id
 ---------------
             80
@@ -3415,12 +3504,14 @@ Sample Output:
             60
            100
             30
+```
 (5 rows)
 Click me to see the solution
 
 31. From the following table, write a  SQL query to find the departments where more than ten employees receive commissions. Return department id.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -3532,18 +3623,21 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  department_id
 ---------------
             80
             50
+```
 (2 rows)
 Click me to see the solution
 
 32. From the following table, write a  SQL query to find those employees who have completed their previous jobs. Return employee ID, end_date.
 
 Sample table : job_history
+```
 +-------------+------------+------------+------------+---------------+
 | EMPLOYEE_ID | START_DATE | END_DATE   | JOB_ID     | DEPARTMENT_ID |
 +-------------+------------+------------+------------+---------------+
@@ -3558,19 +3652,22 @@ Sample table : job_history
 |         176 | 2007-01-01 | 2007-12-31 | SA_MAN     |            80 |
 |         200 | 2002-07-01 | 2006-12-31 | AC_ACCOUNT |            90 |
 +-------------+------------+------------+------------+---------------+
+```
 Sample Output:
-
+```
  employee_id |    max
 -------------+------------
          101 | 2005-03-15
          200 | 2006-12-31
          176 | 2007-12-31
+```
 (7 rows)
 Click me to see the solution
 
 33. From the following table, write a  SQL query to find those employees who do not have commission percentage and have salaries between 7000, 12000 (Begin and end values are included.) and who are employed in the department number 50. Return all the fields of employees.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -3682,10 +3779,12 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
 employee_id | first_name | last_name | email | phone_number | hire_date | job_id | salary | commission_pct | manager_id | department_id
 -------------+------------+-----------+-------+--------------+-----------+--------+--------+----------------+------------+-------------
+```
 (0 rows)
 
 Click me to see the solution
@@ -3693,6 +3792,7 @@ Click me to see the solution
 34. From the following table, write a  SQL query to compute the average salary of each job ID. Exclude those records where average salary is on or lower than 8000. Return job ID, average salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -3804,14 +3904,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
    job_id   |          avg
 ------------+------------------------
  AC_ACCOUNT |  8300.0000000000000000
  SA_MAN     |     12200.000000000000
  AD_PRES    |     24000.000000000000
  AC_MGR     | 12000.0000000000000000
+```
 .....
 (10 rows)
 Click me to see the solution
@@ -3819,6 +3921,7 @@ Click me to see the solution
 35. From the following table, write a  SQL query to find those job titles where maximum salary falls between 12000 and 18000 (Begin and end values are included.). Return job_title, max_salary-min_salary.
 
 Sample table : jobs
+```
 +------------+---------------------------------+------------+------------+
 | JOB_ID     | JOB_TITLE                       | MIN_SALARY | MAX_SALARY |
 +------------+---------------------------------+------------+------------+
@@ -3842,8 +3945,9 @@ Sample table : jobs
 | HR_REP     | Human Resources Representative  |       4000 |       9000 |
 | PR_REP     | Public Relations Representative |       4500 |      10500 |
 +------------+---------------------------------+------------+------------+
+```
 Sample Output:
-
+```
       job_title       | salary_differences
 ----------------------+--------------------
  Finance Manager      |               7800
@@ -3851,12 +3955,14 @@ Sample Output:
  Sales Representative |               6000
  Purchasing Manager   |               7000
  Marketing Manager    |               6000
+```
 (5 rows)
 Click me to see the solution
 
 36. From the following table, write a  SQL query to find the employees whose first or last name begins with 'D'. Return first name, last name.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -3968,14 +4074,16 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  first_name | last_name
 ------------+-----------
  Lex        | De Haan
  David      | Austin
  Diana      | Lorentz
  Daniel     | Faviet
+```
 .....
 (14 rows)
 Click me to see the solution
@@ -3983,6 +4091,7 @@ Click me to see the solution
 37. From the following table, write a  SQL query to find details of those jobs where the minimum salary exceeds 9000. Return all the fields of jobs.
 
 Sample table : jobs
+```
 +------------+---------------------------------+------------+------------+
 | JOB_ID     | JOB_TITLE                       | MIN_SALARY | MAX_SALARY |
 +------------+---------------------------------+------------+------------+
@@ -4006,19 +4115,22 @@ Sample table : jobs
 | HR_REP     | Human Resources Representative  |       4000 |       9000 |
 | PR_REP     | Public Relations Representative |       4500 |      10500 |
 +------------+---------------------------------+------------+------------+
+```
 Sample Output:
-
+```
  job_id  |           job_title           | min_salary | max_salary
 ---------+-------------------------------+------------+------------
  AD_PRES | President                     |      20000 |      40000
  AD_VP   | Administration Vice President |      15000 |      30000
  SA_MAN  | Sales Manager                 |      10000 |      20000
+```
 (3 rows)
 Click me to see the solution
 
 38. From the following table, write a  SQL query to find those employees who joined after 7th September 1987. Return all the fields.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -4130,8 +4242,9 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
-
+```
  employee_id | first_name  |  last_name  |  email   |    phone_number    | hire_date  |   job_id   |  salary  | commission_pct | manager_id | department_id
 -------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------
          100 | Steven      | King        | SKING    | 515.123.4567       | 2003-06-17 | AD_PRES    | 24000.00 |           0.00 |          0 |            90
@@ -4139,9 +4252,6 @@ Sample Output:
          102 | Lex         | De Haan     | LDEHAAN  | 515.123.4569       | 2001-01-13 | AD_VP      | 17000.00 |           0.00 |        100 |            90
          103 | Alexander   | Hunold      | AHUNOLD  | 590.423.4567       | 2006-01-03 | IT_PROG    |  9000.00 |           0.00 |        102 |            60
          104 | Bruce       | Ernst       | BERNST   | 590.423.4568       | 2007-05-21 | IT_PROG    |  6000.00 |           0.00 |        103 |            60
+```
 (107 rows)
 Click me to see the solution
-
-More to Come !
-
-Practice Onlin
