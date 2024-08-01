@@ -583,3 +583,242 @@ The role of a DBA in managing database security includes:
 - **Backup and Recovery**: Ensure backup and recovery processes are secure and regularly tested to prevent data loss.
 
 These questions and answers should provide a solid foundation for preparing for a SQL or DBA interview.
+
+
+Here is a comprehensive set of SQL coding questions and their answers across various topics and concepts:
+
+### Basic SQL Queries
+
+1. **Find the second highest salary from an employee table:**
+
+   ```sql
+   SELECT MAX(salary) AS SecondHighestSalary
+   FROM employees
+   WHERE salary < (SELECT MAX(salary) FROM employees);
+   ```
+
+2. **Retrieve all unique values from a column:**
+
+   ```sql
+   SELECT DISTINCT column_name
+   FROM table_name;
+   ```
+
+3. **Find employees who have joined in the last 30 days:**
+
+   ```sql
+   SELECT *
+   FROM employees
+   WHERE join_date >= CURDATE() - INTERVAL 30 DAY;
+   ```
+
+### Joins and Subqueries
+
+1. **Difference between `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, and `FULL JOIN`:**
+
+   - **INNER JOIN**: Returns records that have matching values in both tables.
+
+     ```sql
+     SELECT *
+     FROM table1
+     INNER JOIN table2 ON table1.id = table2.id;
+     ```
+
+   - **LEFT JOIN**: Returns all records from the left table and matched records from the right table. Returns NULL for unmatched rows from the right table.
+
+     ```sql
+     SELECT *
+     FROM table1
+     LEFT JOIN table2 ON table1.id = table2.id;
+     ```
+
+   - **RIGHT JOIN**: Returns all records from the right table and matched records from the left table. Returns NULL for unmatched rows from the left table.
+
+     ```sql
+     SELECT *
+     FROM table1
+     RIGHT JOIN table2 ON table1.id = table2.id;
+     ```
+
+   - **FULL JOIN**: Returns all records when there is a match in either left or right table. If there is no match, NULL values are returned for non-matching rows.
+
+     ```sql
+     SELECT *
+     FROM table1
+     FULL JOIN table2 ON table1.id = table2.id;
+     ```
+
+2. **Find the highest spending customer per location:**
+
+   ```sql
+   SELECT location, name, amount
+   FROM customer_sales
+   WHERE (location, amount) IN (
+       SELECT location, MAX(amount)
+       FROM customer_sales
+       GROUP BY location
+   );
+   ```
+
+3. **Write a SQL query to find employees with the highest salary in each department:**
+
+   ```sql
+   SELECT department_id, employee_id, salary
+   FROM employees
+   WHERE (department_id, salary) IN (
+       SELECT department_id, MAX(salary)
+       FROM employees
+       GROUP BY department_id
+   );
+   ```
+
+### Aggregation and Grouping
+
+1. **Use `GROUP BY` and `HAVING` to find departments with more than 10 employees:**
+
+   ```sql
+   SELECT department_id, COUNT(*)
+   FROM employees
+   GROUP BY department_id
+   HAVING COUNT(*) > 10;
+   ```
+
+2. **Calculate the average salary by department:**
+
+   ```sql
+   SELECT department_id, AVG(salary) AS AverageSalary
+   FROM employees
+   GROUP BY department_id;
+   ```
+
+### Indexing and Performance
+
+1. **Create an index on a column:**
+
+   ```sql
+   CREATE INDEX idx_column_name
+   ON table_name (column_name);
+   ```
+
+2. **Explain how `EXPLAIN` can be used:**
+
+   ```sql
+   EXPLAIN SELECT * FROM employees WHERE department_id = 10;
+   ```
+
+   - **Explanation**: `EXPLAIN` provides information about how MySQL executes a query, including the indexes used, the join types, and the order in which tables are accessed.
+
+### Transactions and Concurrency
+
+1. **Start a transaction, perform operations, and commit:**
+
+   ```sql
+   START TRANSACTION;
+   
+   UPDATE employees
+   SET salary = salary * 1.05
+   WHERE department_id = 10;
+   
+   COMMIT;
+   ```
+
+2. **Roll back a transaction if an error occurs:**
+
+   ```sql
+   START TRANSACTION;
+   
+   UPDATE employees
+   SET salary = salary * 1.05
+   WHERE department_id = 10;
+
+   -- Check for error
+   -- If error occurs
+   ROLLBACK;
+   ```
+
+3. **Use savepoint within a transaction:**
+
+   ```sql
+   START TRANSACTION;
+   
+   SAVEPOINT sp1;
+   
+   UPDATE employees
+   SET salary = salary * 1.05
+   WHERE department_id = 10;
+   
+   -- If error occurs after savepoint
+   ROLLBACK TO sp1;
+   
+   COMMIT;
+   ```
+
+### Database Design and Schema
+
+1. **Add a new column to an existing table:**
+
+   ```sql
+   ALTER TABLE table_name
+   ADD column_name data_type;
+   ```
+
+2. **Create a table with primary and foreign keys:**
+
+   ```sql
+   CREATE TABLE employees (
+       employee_id INT PRIMARY KEY,
+       name VARCHAR(100),
+       department_id INT,
+       FOREIGN KEY (department_id) REFERENCES departments(department_id)
+   );
+   ```
+
+### Backup and Recovery
+
+1. **Perform a full backup (example for MySQL):**
+
+   ```bash
+   mysqldump -u username -p database_name > backup_file.sql
+   ```
+
+2. **Restore a database from a backup (example for MySQL):**
+
+   ```bash
+   mysql -u username -p database_name < backup_file.sql
+   ```
+
+### Security and Compliance
+
+1. **Grant a user read access to a table:**
+
+   ```sql
+   GRANT SELECT ON database_name.table_name TO 'username'@'host';
+   ```
+
+2. **Revoke a user’s privileges:**
+
+   ```sql
+   REVOKE ALL PRIVILEGES ON database_name.table_name FROM 'username'@'host';
+   ```
+
+### Advanced Topics
+
+1. **Sharding (conceptual example):**
+   Sharding involves splitting a large database into smaller, more manageable pieces. For example, you could shard user data by user ID ranges across multiple databases:
+
+   ```sql
+   -- Shard 1: User IDs 1-1000
+   CREATE DATABASE shard1;
+   USE shard1;
+   CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(100));
+
+   -- Shard 2: User IDs 1001-2000
+   CREATE DATABASE shard2;
+   USE shard2;
+   CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(100));
+   ```
+
+2. **Eventual Consistency:**
+   Distributed databases might use eventual consistency, where updates are propagated over time to ensure that all replicas eventually have the same data. This is managed by replication protocols and consistency models.
+
+These questions and answers should give you a solid foundation for understanding and answering SQL-related questions in interviews. If you need more specific examples or additional topics, feel free to ask!
