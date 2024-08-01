@@ -7,6 +7,7 @@ SQL [38 exercises with solution]
 1. From the following table, write a  SQL query to find those employees whose salaries are less than 6000. Return full name (first and last name), and salary.
 
 Sample table: employees
+```
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
 | EMPLOYEE_ID | FIRST_NAME  | LAST_NAME   | EMAIL    | PHONE_NUMBER       | HIRE_DATE  | JOB_ID     | SALARY   | COMMISSION_PCT | MANAGER_ID | DEPARTMENT_ID |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
@@ -118,6 +119,7 @@ Sample table: employees
 |         205 | Shelley     | Higgins     | SHIGGINS | 515.123.8080       | 2002-06-07 | AC_MGR     | 12008.00 |           0.00 |        101 |           110 |
 |         206 | William     | Gietz       | WGIETZ   | 515.123.8181       | 2002-06-07 | AC_ACCOUNT |  8300.00 |           0.00 |        205 |           110 |
 +-------------+-------------+-------------+----------+--------------------+------------+------------+----------+----------------+------------+---------------+
+```
 Sample Output:
 
      full_name     | salary
