@@ -32,37 +32,12 @@ WORKER_REF_ID	WORKER_TITLE	AFFECTED_FROM
 Title Table
 To prepare the sample data, run the following queries in your database query executor or SQL command line. We’ve tested them with the latest version of MySQL Server and MySQL Workbench query browser. You can download these tools and install them to execute the SQL queries. However, these queries will run fine in any online MySQL compiler, you may use them.
 
-
-
-Replay
-
-Unmute
-Current Time 
-7:27
-/
-Duration 
-7:27
-
-Fullscreen
-Now Playing
-
-
-
-
-
-
-
-
-
-Play Video
-50 SQL Exercises, Practice, Solution
-
-Share
-Watch onHumix
 SQL Script to Seed Sample Data.
 Initialize Test Data
 Run the following script to create test tables and insert data.
 Run
+
+```sql
 CREATE TABLE Worker (
     WORKER_ID INT NOT NULL PRIMARY KEY,
     FIRST_NAME CHAR(25),
@@ -71,7 +46,8 @@ CREATE TABLE Worker (
     JOINING_DATE DATETIME,
     DEPARTMENT CHAR(25)
 );
-
+```
+```sql
 INSERT INTO Worker (WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
     (1, 'Monika', 'Arora', 100000, '2021-02-20 09:00:00', 'HR'),
     (2, 'Niharika', 'Verma', 80000, '2021-06-11 09:00:00', 'Admin'),
@@ -81,28 +57,32 @@ INSERT INTO Worker (WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPA
     (6, 'Vipul', 'Diwan', 200000, '2021-06-11 09:00:00', 'Account'),
     (7, 'Satish', 'Kumar', 75000, '2021-01-20 09:00:00', 'Account'),
     (8, 'Geetika', 'Chauhan', 90000, '2021-04-11 09:00:00', 'Admin');
-
+```
+```sql
 CREATE TABLE Bonus (
     WORKER_REF_ID INT,
     BONUS_AMOUNT INT,
     BONUS_DATE DATETIME,
     FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE
 );
-
+```
+```sql
 INSERT INTO Bonus (WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES
     (1, 5000, '2023-02-20'),
     (2, 3000, '2023-06-11'),
     (3, 4000, '2023-02-20'),
     (1, 4500, '2023-02-20'),
     (2, 3500, '2023-06-11');
-
+```
+```sql
 CREATE TABLE Title (
     WORKER_REF_ID INT,
     WORKER_TITLE CHAR(25),
     AFFECTED_FROM DATETIME,
     FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE
 );
-
+```
+```sql
 INSERT INTO Title (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES
     (1, 'Manager', '2023-02-20 00:00:00'),
     (2, 'Executive', '2023-06-11 00:00:00'),
@@ -112,7 +92,7 @@ INSERT INTO Title (WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES
     (7, 'Executive', '2023-06-11 00:00:00'),
     (6, 'Lead', '2023-06-11 00:00:00'),
     (3, 'Lead', '2023-06-11 00:00:00');
-    
+``` 
 Tables and data initialized successfully!
 Running the above SQL on any MySQL instance will show a result similar to the one below.
 
@@ -126,10 +106,11 @@ Ans.
 
 The required query is:
 
-Ezoic
 Query #1
 RunShow Solution
+```sql
 Select FIRST_NAME AS WORKER_NAME from Worker;
+```
 SQL query executed successfully!
 Details
 WORKER_NAME
@@ -148,7 +129,9 @@ The required query is:
 
 Query #2
 RunShow Solution
+```sql
 Select upper(FIRST_NAME) from Worker;
+```
 SQL query executed successfully!
 Details
 upper(FIRST_NAME)
@@ -168,7 +151,9 @@ The required query is:
 
 Query #3
 RunShow Solution
+```sql
 Select distinct DEPARTMENT from Worker;
+```
 SQL query executed successfully!
 Details
 DEPARTMENT
@@ -180,10 +165,11 @@ Ans.
 
 The required query is:
 
-Ezoic
 Query #4
 RunShow Solution
+```sql
 Select substring(FIRST_NAME,1,3) from Worker;
+```
 SQL query executed successfully!
 Details
 substring(FIRST_NAME,1,3)
@@ -202,7 +188,9 @@ The required query is:
 
 Query #5
 RunShow Solution
+```sql
 SELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh';
+```
 SQL query executed successfully!
 Details
 INSTR(FIRST_NAME, 'a')
@@ -214,7 +202,9 @@ The required query is:
 
 Query #6
 RunShow Solution
+```sql
 Select RTRIM(FIRST_NAME) from Worker;
+```
 SQL query executed successfully!
 Details
 RTRIM(FIRST_NAME)
@@ -233,7 +223,9 @@ The required query is:
 
 Query #7
 RunShow Solution
+```sql
 Select LTRIM(DEPARTMENT) from Worker;
+```
 SQL query executed successfully!
 Details
 LTRIM(DEPARTMENT)
@@ -252,7 +244,9 @@ The required query is:
 
 Query #8
 RunShow Solution
+```sql
 SELECT DISTINCT DEPARTMENT, LENGTH(DEPARTMENT) AS Department_Length FROM Worker;
+```
 SQL query executed successfully!
 Details
 DEPARTMENT	Department_Length
@@ -266,7 +260,9 @@ The required query is:
 
 Query #9
 RunShow Solution
+```sql
 Select REPLACE(FIRST_NAME,'a','A') from Worker;
+```
 SQL query executed successfully!
 Details
 REPLACE(FIRST_NAME,'a','A')
@@ -285,7 +281,9 @@ The required query is:
 
 Query #10
 RunShow Solution
+```sql
 SELECT FIRST_NAME || ' ' || LAST_NAME AS COMPLETE_NAME FROM Worker;
+```
 SQL query executed successfully!
 Details
 COMPLETE_NAME
@@ -304,7 +302,9 @@ The required query is:
 
 Query #11
 RunShow Solution
+```sql
 Select * from Worker order by FIRST_NAME asc;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -324,7 +324,9 @@ The required query is:
 
 Query #12
 RunShow Solution
+```sql
 Select * from Worker order by FIRST_NAME asc, DEPARTMENT desc;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -344,7 +346,9 @@ The required query is:
 Ezoic
 Query #13
 RunShow Solution
+```sql
 Select * from Worker where FIRST_NAME in ('Vipul','Satish');
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -358,6 +362,7 @@ The required query is:
 Query #14
 RunShow Solution
 Select * from Worker where FIRST_NAME not in ('Vipul','Satish');
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -375,7 +380,9 @@ The required query is:
 
 Query #15
 RunShow Solution
+```sql
 Select * from Worker where DEPARTMENT like 'Admin%';
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -391,7 +398,9 @@ The required query is:
 Ezoic
 Query #16
 RunShow Solution
+```sql
 Select * from Worker where FIRST_NAME like '%a%';
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -408,7 +417,9 @@ The required query is:
 
 Query #17
 RunShow Solution
+```sql
 Select * from Worker where FIRST_NAME like '%a';
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -418,12 +429,13 @@ WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
 Q-18. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
 Ans.
 
-Ezoic
 The required query is:
 
 Query #18
 RunShow Solution
+```sql
 Select * from Worker where FIRST_NAME like '_____h';
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -435,7 +447,9 @@ The required query is:
 
 Query #19
 RunShow Solution
+```sql
 Select * from Worker where SALARY between 100000 and 500000;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -451,7 +465,9 @@ The required query is:
 
 Query #20
 RunShow Solution
+```sql
 SELECT * FROM Worker WHERE strftime('%Y', JOINING_DATE) = '2021' AND strftime('%m', JOINING_DATE) = '02';
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -469,7 +485,9 @@ The required query is:
 
 Query #21
 RunShow Solution
+```sql
 SELECT COUNT(*) FROM Worker WHERE DEPARTMENT = 'Admin';
+```
 SQL query executed successfully!
 Details
 COUNT(*)
@@ -482,7 +500,9 @@ The required query is:
 
 Query #22
 RunShow Solution
+```sql
 SELECT FIRST_NAME || ' ' || LAST_NAME AS Worker_Name, Salary FROM Worker WHERE Salary BETWEEN 50000 AND 100000;
+```
 SQL query executed successfully!
 Details
 Worker_Name	SALARY
@@ -498,7 +518,9 @@ The required query is:
 Ezoic
 Query #23
 RunShow Solution
+```sql
 SELECT DEPARTMENT, count(WORKER_ID) No_Of_Workers FROM Worker GROUP BY DEPARTMENT ORDER BY No_Of_Workers DESC;
+```
 SQL query executed successfully!
 Details
 DEPARTMENT	No_Of_Workers
@@ -512,7 +534,9 @@ The required query is:
 
 Query #24
 RunShow Solution
+```sql
 SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE FROM Worker W INNER JOIN Title T ON W.WORKER_ID = T.WORKER_REF_ID AND T.WORKER_TITLE in ('Manager');
+```
 SQL query executed successfully!
 Details
 FIRST_NAME	WORKER_TITLE
@@ -526,7 +550,9 @@ The required query is:
 
 Query #25
 RunShow Solution
+```sql
 SELECT WORKER_TITLE, AFFECTED_FROM, COUNT(*) FROM Title GROUP BY WORKER_TITLE, AFFECTED_FROM HAVING COUNT(*) > 1;
+```
 SQL query executed successfully!
 Details
 WORKER_TITLE	AFFECTED_FROM	COUNT(*)
@@ -540,7 +566,9 @@ The required query is:
 Ezoic
 Query #26
 RunShow Solution
+```sql
 SELECT * FROM Worker WHERE WORKER_ID % 2 <> 0;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -555,7 +583,9 @@ The required query is:
 
 Query #27
 RunShow Solution
+```sql
 SELECT * FROM Worker WHERE WORKER_ID % 2 = 0;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -570,7 +600,9 @@ The general query to clone a table with data is:
 
 Query #28
 RunShow Solution
+```sql
 CREATE TABLE WorkerClone AS SELECT * FROM Worker;
+```
 SQL query executed successfully!
 Details
 No records found.
@@ -582,7 +614,9 @@ The required query is:
 
 Query #29
 RunShow Solution
+```sql
 SELECT * FROM Worker INTERSECT SELECT * FROM WorkerClone;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -601,7 +635,9 @@ The required query is:
 
 Query #30
 RunShow Solution
+```sql
 SELECT * FROM Worker EXCEPT SELECT * FROM WorkerClone;
+```
 SQL query executed successfully!
 Details
 No records found.
@@ -613,7 +649,9 @@ The following MySQL query returns the current date:
 
 Query #31
 RunShow Solution
+```sql
 SELECT CURRENT_TIMESTAMP;
+```
 SQL query executed successfully!
 Details
 CURRENT_TIMESTAMP
@@ -623,13 +661,14 @@ Ans.
 
 Specify the SQL query in the below code box:
 
-Ezoic
 Query #32
 RunShow Solution
+```sql
 SELECT *
 FROM Worker
 ORDER BY SALARY DESC  -- Order by salary in descending order to get the highest salaries first
 LIMIT 10;             -- Limit the result to the top 10 records
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -652,16 +691,18 @@ MySQL query to find the nth highest salary:
 Ezoic
 Query #33
 RunShow Solution
+```sql
 SELECT DISTINCT SALARY
 FROM Worker
 ORDER BY SALARY DESC
 LIMIT 1 OFFSET 4;
+```
 SQL query executed successfully!
 Details
 SALARY
 90000
 SQL Server query to find the nth highest salary:
-
+```sql
 SELECT TOP 1 Salary
 FROM (
  SELECT DISTINCT TOP n Salary
@@ -669,6 +710,7 @@ FROM (
  ORDER BY Salary DESC
  )
 ORDER BY Salary ASC;
+```
 Copy
 Q-34. Write an SQL query to determine the 5th highest salary without using the TOP or limit method.
 Ans.
@@ -677,13 +719,15 @@ The following query is using the correlated subquery to return the 5th highest s
 
 Query #34
 RunShow Solution
+```sql
 SELECT Salary FROM Worker W1 WHERE 4 = (SELECT COUNT(DISTINCT W2.Salary) FROM Worker W2 WHERE W2.Salary >= W1.Salary);
+```
 SQL query executed successfully!
 Details
 SALARY
 100000
 Use the following generic method to find the nth highest salary without using TOP or limit.
-
+```sql
 SELECT Salary
 FROM Worker W1
 WHERE n-1 = (
@@ -691,7 +735,7 @@ WHERE n-1 = (
  FROM Worker W2
  WHERE W2.Salary >= W1.Salary
  );
-Copy
+```
 Q-35. Write an SQL query to fetch the list of employees with the same salary.
 Ans.
 
@@ -700,7 +744,9 @@ The required query is:
 Ezoic
 Query #35
 RunShow Solution
+```sql
 SELECT distinct W.WORKER_ID, W.FIRST_NAME, W.Salary from Worker W, Worker W1 where W.Salary = W1.Salary and W.WORKER_ID != W1.WORKER_ID;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	SALARY
@@ -713,7 +759,9 @@ The required query is:
 
 Query #36
 RunShow Solution
+```sql
 SELECT max(Salary) from Worker where Salary not in (Select max(Salary) from Worker);
+```
 SQL query executed successfully!
 Details
 max(Salary)
@@ -726,7 +774,9 @@ The required query is:
 
 Query #37
 RunShow Solution
+```sql
 SELECT FIRST_NAME, DEPARTMENT from Worker W where W.DEPARTMENT='HR' union all select FIRST_NAME, DEPARTMENT from Worker W1 where W1.DEPARTMENT='HR';
+```
 SQL query executed successfully!
 Details
 FIRST_NAME	DEPARTMENT
@@ -746,14 +796,17 @@ RunShow Solution
 --       Both Tables Must Have Same Structure.
 
 -- SQLite and MySQL compatible syntax
+```sql
 SELECT * FROM Worker
 INTERSECT
 SELECT * FROM WorkerClone;
-
+```
 -- SQLite and MySQL compatible syntax
+```sql
 SELECT w.*
 FROM Worker w
 INNER JOIN WorkerClone wc ON w.WORKER_ID = wc.WORKER_ID;
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -781,7 +834,9 @@ The required query is:
 
 Query #39
 RunShow Solution
+```sql
 SELECT * FROM WORKER WHERE WORKER_ID <= (SELECT count(WORKER_ID)/2 from Worker);
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -799,7 +854,9 @@ The required query is:
 
 Query #40
 RunShow Solution
+```sql
 SELECT DEPARTMENT, COUNT(WORKER_ID) as 'Number of Workers' FROM Worker GROUP BY DEPARTMENT HAVING COUNT(WORKER_ID) < 5;
+```
 SQL query executed successfully!
 Details
 DEPARTMENT	Number of Workers
@@ -814,7 +871,9 @@ The following query returns the expected result:
 
 Query #41
 RunShow Solution
+```sql
 SELECT DEPARTMENT, COUNT(DEPARTMENT) as 'Number of Workers' FROM Worker GROUP BY DEPARTMENT;
+```
 SQL query executed successfully!
 Details
 DEPARTMENT	Number of Workers
@@ -828,9 +887,9 @@ The following query will return the last record from the Worker table:
 
 Query #42
 RunShow Solution
+```sql
 Select * from Worker where WORKER_ID = (SELECT max(WORKER_ID) from Worker);
-
-Ezoic
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -842,7 +901,9 @@ The required query is:
 
 Query #43
 RunShow Solution
+```sql
 Select * from Worker where WORKER_ID = (SELECT min(WORKER_ID) from Worker);
+```
 SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
@@ -855,10 +916,13 @@ The required query is:
 Query #44
 RunShow Solution
 -- Solution 1
+```sql
 SELECT * FROM Worker WHERE WORKER_ID <= 5 UNION SELECT * FROM (SELECT * FROM Worker W ORDER BY W.WORKER_ID DESC) AS W1 WHERE W1.WORKER_ID <= 5;
-
+```
 -- Solution 2
+```sql
 SELECT * FROM Worker ORDER BY WORKER_ID DESC LIMIT 5;
+```
 SQL query executed successfully!
 
 Ezoic
@@ -882,7 +946,9 @@ The required query is:
 
 Query #45
 RunShow Solution
+```sql
 SELECT t.DEPARTMENT, t.FIRST_NAME, t.Salary from (SELECT max(Salary) as TotalSalary, DEPARTMENT from Worker group by DEPARTMENT) as TempNew Inner Join Worker t on TempNew.DEPARTMENT = t.DEPARTMENT and TempNew.TotalSalary = t.Salary;
+```
 SQL query executed successfully!
 Details
 DEPARTMENT	FIRST_NAME	SALARY
@@ -897,7 +963,9 @@ The required query is:
 
 Query #46
 RunShow Solution
+```sql
 SELECT distinct Salary from Worker a WHERE 3 >= (SELECT count(distinct Salary) from Worker b WHERE a.Salary <= b.Salary) order by a.Salary desc;
+```
 SQL query executed successfully!
 Details
 SALARY
@@ -905,7 +973,7 @@ SALARY
 300000
 200000
 
-Ezoic
+
 Q-47. Write an SQL query to fetch three min salaries from a table.
 Ans.
 
@@ -913,7 +981,9 @@ The required query is:
 
 Query #47
 RunShow Solution
+```sql
 SELECT distinct Salary from Worker a WHERE 3 >= (SELECT count(distinct Salary) from Worker b WHERE a.Salary >= b.Salary) order by a.Salary desc;
+```
 SQL query executed successfully!
 Details
 SALARY
@@ -927,10 +997,12 @@ The required query is:
 
 Query #48
 RunShow Solution
+```sql
 -- Set the value of n
 WITH vars AS (SELECT 5 AS n)
 -- Use the variable in a query
 SELECT DISTINCT Salary FROM Worker a WHERE (SELECT n FROM vars) >= (SELECT COUNT(DISTINCT Salary) FROM Worker b WHERE a.Salary <= b.Salary) ORDER BY a.Salary DESC;
+```
 SQL query executed successfully!
 Details
 SALARY
@@ -947,7 +1019,9 @@ The required query is:
 
 Query #49
 RunShow Solution
+```sql
 SELECT DEPARTMENT, sum(Salary) from Worker group by DEPARTMENT;
+```
 SQL query executed successfully!
 Details
 DEPARTMENT	sum(Salary)
@@ -961,7 +1035,9 @@ The required query is:
 
 Query #50
 RunShow Solution
+```sql
 SELECT FIRST_NAME, SALARY from Worker WHERE SALARY=(SELECT max(SALARY) from Worker);
+```
 SQL query executed successfully!
 Details
 FIRST_NAME	SALARY
