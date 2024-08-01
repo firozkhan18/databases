@@ -1,7 +1,7 @@
 Prepare Sample Data To Practice SQL Skills
 Sample Table – Worker
 |WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE	|DEPARTMENT|
-|-----	|-----|	-----|	-----|	-----	|-----|
+|-----|----------|----------|----------|----------|----------|
 |001	|Monika	Arora	|100000	|2021-02-20 09:00:00|	HR|
 |002	|Niharika	Verma	|80000	|2021-06-11 09:00:00|	Admin|
 |003	|Vishal	Singhal	|300000	|2021-02-20 09:00:00|	HR|
