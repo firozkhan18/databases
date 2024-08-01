@@ -106,12 +106,12 @@ Creating Sample Data to Practice SQL Skill.
 Start with 20 Basic SQL Questions for Practice
 Below are some of the most commonly asked SQL query questions and answers for practice. Get a timer to track your progress and start practicing.
 
-Q-1. Write an SQL query to fetch “FIRST_NAME” from the Worker table using the alias name <WORKER_NAME>.
+### Q-1. Write an SQL query to fetch “FIRST_NAME” from the Worker table using the alias name <WORKER_NAME>.
 Ans.
 
 The required query is:
 
-Query #1
+### Query #1
 RunShow Solution
 ```sql
 Select FIRST_NAME AS WORKER_NAME from Worker;
@@ -129,12 +129,12 @@ Details
 |Satish|
 |Geetika|
 
-Q-2. Write an SQL query to fetch “FIRST_NAME” from the Worker table in upper case.
+### Q-2. Write an SQL query to fetch “FIRST_NAME” from the Worker table in upper case.
 Ans.
 
 The required query is:
 
-Query #2
+### Query #2
 RunShow Solution
 ```sql
 Select upper(FIRST_NAME) from Worker;
@@ -152,12 +152,12 @@ Details
 |SATISH|
 |GEETIKA|
 
-Q-3. Write an SQL query to fetch unique values of DEPARTMENT from the Worker table.
+### Q-3. Write an SQL query to fetch unique values of DEPARTMENT from the Worker table.
 Ans.
 
 The required query is:
 
-Query #3
+### Query #3
 RunShow Solution
 ```sql
 Select distinct DEPARTMENT from Worker;
@@ -170,12 +170,12 @@ Details
 |Admin|
 |Account|
 
-Q-4. Write an SQL query to print the first three characters of  FIRST_NAME from the Worker table.
+### Q-4. Write an SQL query to print the first three characters of  FIRST_NAME from the Worker table.
 Ans.
 
 The required query is:
 
-Query #4
+### Query #4
 RunShow Solution
 ```sql
 Select substring(FIRST_NAME,1,3) from Worker;
@@ -193,12 +193,12 @@ Details
 |Sat|
 |Gee|
 
-Q-5. Write an SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from the Worker table.
+### Q-5. Write an SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from the Worker table.
 Ans.
 
 The required query is:
 
-Query #5
+### Query #5
 RunShow Solution
 ```sql
 SELECT INSTR(FIRST_NAME, 'a') FROM Worker WHERE FIRST_NAME = 'Amitabh';
@@ -209,12 +209,12 @@ Details
 |-----|
 |5|
 
-Q-6. Write an SQL query to print the FIRST_NAME from the Worker table after removing white spaces from the right side.
+### Q-6. Write an SQL query to print the FIRST_NAME from the Worker table after removing white spaces from the right side.
 Ans.
 
 The required query is:
 
-Query #6
+### Query #6
 RunShow Solution
 ```sql
 Select RTRIM(FIRST_NAME) from Worker;
@@ -231,12 +231,12 @@ Vivek
 Vipul
 Satish
 Geetika
-Q-7. Write an SQL query to print the DEPARTMENT from the Worker table after removing white spaces from the left side.
+### Q-7. Write an SQL query to print the DEPARTMENT from the Worker table after removing white spaces from the left side.
 Ans.
 
 The required query is:
 
-Query #7
+### Query #7
 RunShow Solution
 ```sql
 Select LTRIM(DEPARTMENT) from Worker;
@@ -253,12 +253,12 @@ Admin
 Account
 Account
 Admin
-Q-8. Write an SQL query that fetches the unique values of DEPARTMENT from the Worker table and prints its length.
+### Q-8. Write an SQL query that fetches the unique values of DEPARTMENT from the Worker table and prints its length.
 Ans.
 
 The required query is:
 
-Query #8
+### Query #8
 RunShow Solution
 ```sql
 SELECT DISTINCT DEPARTMENT, LENGTH(DEPARTMENT) AS Department_Length FROM Worker;
@@ -269,12 +269,12 @@ DEPARTMENT	Department_Length
 HR	2
 Admin	5
 Account	7
-Q-9. Write an SQL query to print the FIRST_NAME from the Worker table after replacing ‘a’ with ‘A’.
+### Q-9. Write an SQL query to print the FIRST_NAME from the Worker table after replacing ‘a’ with ‘A’.
 Ans.
 
 The required query is:
 
-Query #9
+### Query #9
 RunShow Solution
 ```sql
 Select REPLACE(FIRST_NAME,'a','A') from Worker;
@@ -291,12 +291,12 @@ Vivek
 Vipul
 SAtish
 GeetikA
-Q-10. Write an SQL query to print the FIRST_NAME and LAST_NAME from the Worker table into a single column COMPLETE_NAME. A space char should separate them.
+### Q-10. Write an SQL query to print the FIRST_NAME and LAST_NAME from the Worker table into a single column COMPLETE_NAME. A space char should separate them.
 Ans.
 
 The required query is:
 
-Query #10
+### Query #10
 RunShow Solution
 ```sql
 SELECT FIRST_NAME || ' ' || LAST_NAME AS COMPLETE_NAME FROM Worker;
@@ -313,12 +313,12 @@ Vivek Bhati
 Vipul Diwan
 Satish Kumar
 Geetika Chauhan
-Q-11. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+### Q-11. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
 Ans.
 
 The required query is:
 
-Query #11
+### Query #11
 RunShow Solution
 ```sql
 Select * from Worker order by FIRST_NAME asc;
@@ -335,13 +335,13 @@ Details
 |6	|Vipul	|Diwan	|200000	|2021-06-11 09:00:00	|Account|
 |3	|Vishal	|Singhal	|300000	|2021-02-20 09:00:00	|HR|
 |5	|Vivek	|Bhati	|500000	|2021-06-11 09:00:00	|Admin|
-Q-12. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+### Q-12. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
 Ans.
 
 
 The required query is:
 
-Query #12
+### Query #12
 RunShow Solution
 ```sql
 Select * from Worker order by FIRST_NAME asc, DEPARTMENT desc;
@@ -360,12 +360,12 @@ Details
 |3	|Vishal	|Singhal	|300000	|2021-02-20 09:00:00|	HR|
 |5	|Vivek	|Bhati	|500000	|2021-06-11 09:00:00|	Admin|
 
-Q-13. Write an SQL query to print details for Workers with the first names “Vipul” and “Satish” from the Worker table.
+### Q-13. Write an SQL query to print details for Workers with the first names “Vipul” and “Satish” from the Worker table.
 Ans.
 
 The required query is:
 
-Query #13
+### Query #13
 RunShow Solution
 ```sql
 Select * from Worker where FIRST_NAME in ('Vipul','Satish');
@@ -377,12 +377,12 @@ Details
 |6	|Vipul	|Diwan|	200000|	2021-06-11 09:00:00|	Account|
 |7	|Satish	|Kumar|	75000|	2021-01-20 09:00:00|	Account|
 
-Q-14. Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from the Worker table.
+### Q-14. Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from the Worker table.
 Ans.
 
 The required query is:
 
-Query #14
+### Query #14
 RunShow Solution
 Select * from Worker where FIRST_NAME not in ('Vipul','Satish');
 ```
@@ -396,13 +396,13 @@ Details
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-15. Write an SQL query to print details of Workers with DEPARTMENT name as “Admin”.
+### Q-15. Write an SQL query to print details of Workers with DEPARTMENT name as “Admin”.
 Ans.
 
 
 The required query is:
 
-Query #15
+### Query #15
 RunShow Solution
 ```sql
 Select * from Worker where DEPARTMENT like 'Admin%';
@@ -415,13 +415,13 @@ Details
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-16. Write an SQL query to print details of the Workers whose FIRST_NAME contains ‘a’.
+### Q-16. Write an SQL query to print details of the Workers whose FIRST_NAME contains ‘a’.
 Ans.
 
 The required query is:
 
 
-Query #16
+### Query #16
 RunShow Solution
 ```sql
 Select * from Worker where FIRST_NAME like '%a%';
@@ -436,12 +436,12 @@ Details
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-17. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘a’.
+### Q-17. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘a’.
 Ans.
 
 The required query is:
 
-Query #17
+### Query #17
 RunShow Solution
 ```sql
 Select * from Worker where FIRST_NAME like '%a';
@@ -453,12 +453,12 @@ Details
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
 2	Niharika	Verma	80000	2021-06-11 09:00:00	Admin
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-18. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
+### Q-18. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
 Ans.
 
 The required query is:
 
-Query #18
+### Query #18
 RunShow Solution
 ```sql
 Select * from Worker where FIRST_NAME like '_____h';
@@ -468,12 +468,12 @@ Details
 |WORKER_ID	|FIRST_NAME|	LAST_NAME|	SALARY|	JOINING_DATE|	DEPARTMENT|
 |-----|-----|-----|-----|-----|-----|
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
-Q-19. Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+### Q-19. Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
 Ans.
 
 The required query is:
 
-Query #19
+### Query #19
 RunShow Solution
 ```sql
 Select * from Worker where SALARY between 100000 and 500000;
@@ -487,12 +487,12 @@ Details
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
-Q-20. Write an SQL query to print details of the Workers who joined in Feb 2021.
+### Q-20. Write an SQL query to print details of the Workers who joined in Feb 2021.
 Ans.
 
 The required query is:
 
-Query #20
+### Query #20
 RunShow Solution
 ```sql
 SELECT * FROM Worker WHERE strftime('%Y', JOINING_DATE) = '2021' AND strftime('%m', JOINING_DATE) = '02';
@@ -508,12 +508,12 @@ Details
 At this point, you have acquired a good understanding of the basics of SQL, let’s move on to some more intermediate-level SQL query interview questions. These questions will require us to use more advanced SQL syntax and concepts, such as GROUP BY, HAVING, and ORDER BY.
 
 
-Q-21. Write an SQL query to fetch the count of employees working in the department ‘Admin’.
+### Q-21. Write an SQL query to fetch the count of employees working in the department ‘Admin’.
 Ans.
 
 The required query is:
 
-Query #21
+### Query #21
 RunShow Solution
 ```sql
 SELECT COUNT(*) FROM Worker WHERE DEPARTMENT = 'Admin';
@@ -522,13 +522,13 @@ SQL query executed successfully!
 Details
 COUNT(*)
 4
-Q-22. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+### Q-22. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
 Ans.
 
 
 The required query is:
 
-Query #22
+### Query #22
 RunShow Solution
 ```sql
 SELECT FIRST_NAME || ' ' || LAST_NAME AS Worker_Name, Salary FROM Worker WHERE Salary BETWEEN 50000 AND 100000;
@@ -540,13 +540,13 @@ Monika Arora	100000
 Niharika Verma	80000
 Satish Kumar	75000
 Geetika Chauhan	90000
-Q-23. Write an SQL query to fetch the number of workers for each department in descending order.
+### Q-23. Write an SQL query to fetch the number of workers for each department in descending order.
 Ans.
 
 The required query is:
 
 
-Query #23
+### Query #23
 RunShow Solution
 ```sql
 SELECT DEPARTMENT, count(WORKER_ID) No_Of_Workers FROM Worker GROUP BY DEPARTMENT ORDER BY No_Of_Workers DESC;
@@ -557,12 +557,12 @@ DEPARTMENT	No_Of_Workers
 Admin	4
 HR	2
 Account	2
-Q-24. Write an SQL query to print details of the Workers who are also Managers.
+### Q-24. Write an SQL query to print details of the Workers who are also Managers.
 Ans.
 
 The required query is:
 
-Query #24
+### Query #24
 RunShow Solution
 ```sql
 SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE FROM Worker W INNER JOIN Title T ON W.WORKER_ID = T.WORKER_REF_ID AND T.WORKER_TITLE in ('Manager');
@@ -572,13 +572,13 @@ Details
 FIRST_NAME	WORKER_TITLE
 Monika	Manager
 Vivek	Manager
-Q-25. Write an SQL query to fetch duplicate records having matching data in some fields of a table.
+### Q-25. Write an SQL query to fetch duplicate records having matching data in some fields of a table.
 Ans.
 
 
 The required query is:
 
-Query #25
+### Query #25
 RunShow Solution
 ```sql
 SELECT WORKER_TITLE, AFFECTED_FROM, COUNT(*) FROM Title GROUP BY WORKER_TITLE, AFFECTED_FROM HAVING COUNT(*) > 1;
@@ -588,13 +588,13 @@ Details
 WORKER_TITLE	AFFECTED_FROM	COUNT(*)
 Executive	2023-06-11 00:00:00	3
 Lead	2023-06-11 00:00:00	2
-Q-26. Write an SQL query to show only odd rows from a table.
+### Q-26. Write an SQL query to show only odd rows from a table.
 Ans.
 
 The required query is:
 
 
-Query #26
+### Query #26
 RunShow Solution
 ```sql
 SELECT * FROM Worker WHERE WORKER_ID % 2 <> 0;
@@ -607,12 +607,12 @@ Details
 3	Vishal	Singhal	300000	2021-02-20 09:00:00	HR
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
-Q-27. Write an SQL query to show only even rows from a table.
+### Q-27. Write an SQL query to show only even rows from a table.
 Ans.
 
 The required query is:
 
-Query #27
+### Query #27
 RunShow Solution
 ```sql
 SELECT * FROM Worker WHERE WORKER_ID % 2 = 0;
@@ -625,12 +625,12 @@ Details
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-28. Write an SQL query to clone a new table from another table.
+### Q-28. Write an SQL query to clone a new table from another table.
 Ans.
 
 The general query to clone a table with data is:
 
-Query #28
+### Query #28
 RunShow Solution
 ```sql
 CREATE TABLE WorkerClone AS SELECT * FROM Worker;
@@ -639,12 +639,12 @@ SQL query executed successfully!
 Details
 No records found.
 
-Q-29. Write an SQL query to fetch intersecting records of two tables.
+### Q-29. Write an SQL query to fetch intersecting records of two tables.
 Ans.
 
 The required query is:
 
-Query #29
+### Query #29
 RunShow Solution
 ```sql
 SELECT * FROM Worker INTERSECT SELECT * FROM WorkerClone;
@@ -661,12 +661,12 @@ Details
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-30. Write an SQL query to show records from one table that another table does not have.
+### Q-30. Write an SQL query to show records from one table that another table does not have.
 Ans.
 
 The required query is:
 
-Query #30
+### Query #30
 RunShow Solution
 ```sql
 SELECT * FROM Worker EXCEPT SELECT * FROM WorkerClone;
@@ -675,12 +675,12 @@ SQL query executed successfully!
 Details
 No records found.
 
-Q-31. Write an SQL query to show the current date and time.
+### Q-31. Write an SQL query to show the current date and time.
 Ans.
 
 The following MySQL query returns the current date:
 
-Query #31
+### Query #31
 RunShow Solution
 ```sql
 SELECT CURRENT_TIMESTAMP;
@@ -689,12 +689,12 @@ SQL query executed successfully!
 Details
 CURRENT_TIMESTAMP
 2024-08-01 14:24:05
-Q-32. Write an SQL query to show the top n (say 10) records of a table.
+### Q-32. Write an SQL query to show the top n (say 10) records of a table.
 Ans.
 
 Specify the SQL query in the below code box:
 
-Query #32
+### Query #32
 RunShow Solution
 ```sql
 SELECT *
@@ -717,13 +717,13 @@ Details
 18 Complex SQL Queries for Practice
 Now, that you have built a solid foundation in intermediate SQL, It’s time to practice with some advanced SQL query questions with answers. These interview questions involve queries with more complex SQL syntax and concepts, such as nested queries, joins, unions, and intersects.
 
-Q-33. Write an SQL query to determine the nth (say n=5) highest salary from a table.
+### Q-33. Write an SQL query to determine the nth (say n=5) highest salary from a table.
 Ans.
 
 MySQL query to find the nth highest salary:
 
 
-Query #33
+### Query #33
 RunShow Solution
 ```sql
 SELECT DISTINCT SALARY
@@ -746,12 +746,12 @@ FROM (
 ORDER BY Salary ASC;
 ```
 Copy
-Q-34. Write an SQL query to determine the 5th highest salary without using the TOP or limit method.
+### Q-34. Write an SQL query to determine the 5th highest salary without using the TOP or limit method.
 Ans.
 
 The following query is using the correlated subquery to return the 5th highest salary:
 
-Query #34
+### Query #34
 RunShow Solution
 ```sql
 SELECT Salary FROM Worker W1 WHERE 4 = (SELECT COUNT(DISTINCT W2.Salary) FROM Worker W2 WHERE W2.Salary >= W1.Salary);
@@ -770,13 +770,13 @@ WHERE n-1 = (
  WHERE W2.Salary >= W1.Salary
  );
 ```
-Q-35. Write an SQL query to fetch the list of employees with the same salary.
+### Q-35. Write an SQL query to fetch the list of employees with the same salary.
 Ans.
 
 The required query is:
 
 
-Query #35
+### Query #35
 RunShow Solution
 ```sql
 SELECT distinct W.WORKER_ID, W.FIRST_NAME, W.Salary from Worker W, Worker W1 where W.Salary = W1.Salary and W.WORKER_ID != W1.WORKER_ID;
@@ -786,12 +786,12 @@ Details
 WORKER_ID	FIRST_NAME	SALARY
 4	Amitabh	500000
 5	Vivek	500000
-Q-36. Write an SQL query to show the second-highest salary from a table.
+### Q-36. Write an SQL query to show the second-highest salary from a table.
 Ans.
 
 The required query is:
 
-Query #36
+### Query #36
 RunShow Solution
 ```sql
 SELECT max(Salary) from Worker where Salary not in (Select max(Salary) from Worker);
@@ -800,13 +800,13 @@ SQL query executed successfully!
 Details
 max(Salary)
 300000
-Q-37. Write an SQL query to show one row twice in the results from a table.
+### Q-37. Write an SQL query to show one row twice in the results from a table.
 Ans.
 
 
 The required query is:
 
-Query #37
+### Query #37
 RunShow Solution
 ```sql
 SELECT FIRST_NAME, DEPARTMENT from Worker W where W.DEPARTMENT='HR' union all select FIRST_NAME, DEPARTMENT from Worker W1 where W1.DEPARTMENT='HR';
@@ -818,15 +818,15 @@ Monika	HR
 Vishal	HR
 Monika	HR
 Vishal	HR
-Q-38. Write an SQL query to fetch intersecting records of two tables.
+### Q-38. Write an SQL query to fetch intersecting records of two tables.
 Ans.
 
 The required query is:
 
-Query #38
+### Query #38
 RunShow Solution
 -- Note:
---       You Must Run Query #28
+--       You Must Run ### Query #28
 --       Both Tables Must Have Same Structure.
 
 -- SQLite and MySQL compatible syntax
@@ -864,12 +864,12 @@ Details
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
 7	Satish	Kumar	75000	2021-01-20 09:00:00	Account
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-39. Write an SQL query to fetch the first 50% of records from a table.
+### Q-39. Write an SQL query to fetch the first 50% of records from a table.
 Ans.
 
 The required query is:
 
-Query #39
+### Query #39
 RunShow Solution
 ```sql
 SELECT * FROM WORKER WHERE WORKER_ID <= (SELECT count(WORKER_ID)/2 from Worker);
@@ -885,12 +885,12 @@ Details
 Practicing SQL query interview questions is a great way to improve your understanding of the language and become more proficient in SQL. In addition to improving your technical skills, practicing SQL query questions can help you advance your career. Many employers seek candidates with strong SQL skills, so demonstrating your proficiency can get you a competitive edge.
 
 
-Q-40. Write an SQL query to fetch the departments that have less than five people in them.
+### Q-40. Write an SQL query to fetch the departments that have less than five people in them.
 Ans.
 
 The required query is:
 
-Query #40
+### Query #40
 RunShow Solution
 ```sql
 SELECT DEPARTMENT, COUNT(WORKER_ID) as 'Number of Workers' FROM Worker GROUP BY DEPARTMENT HAVING COUNT(WORKER_ID) < 5;
@@ -901,13 +901,13 @@ DEPARTMENT	Number of Workers
 Account	2
 Admin	4
 HR	2
-Q-41. Write an SQL query to show all departments along with the number of people in there.
+### Q-41. Write an SQL query to show all departments along with the number of people in there.
 Ans.
 
 
 The following query returns the expected result:
 
-Query #41
+### Query #41
 RunShow Solution
 ```sql
 SELECT DEPARTMENT, COUNT(DEPARTMENT) as 'Number of Workers' FROM Worker GROUP BY DEPARTMENT;
@@ -918,12 +918,12 @@ DEPARTMENT	Number of Workers
 Account	2
 Admin	4
 HR	2
-Q-42. Write an SQL query to show the last record from a table.
+### Q-42. Write an SQL query to show the last record from a table.
 Ans.
 
 The following query will return the last record from the Worker table:
 
-Query #42
+### Query #42
 RunShow Solution
 ```sql
 Select * from Worker where WORKER_ID = (SELECT max(WORKER_ID) from Worker);
@@ -932,12 +932,12 @@ SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
 8	Geetika	Chauhan	90000	2021-04-11 09:00:00	Admin
-Q-43. Write an SQL query to fetch the first row of a table.
+### Q-43. Write an SQL query to fetch the first row of a table.
 Ans.
 
 The required query is:
 
-Query #43
+### Query #43
 RunShow Solution
 ```sql
 Select * from Worker where WORKER_ID = (SELECT min(WORKER_ID) from Worker);
@@ -946,12 +946,12 @@ SQL query executed successfully!
 Details
 WORKER_ID	FIRST_NAME	LAST_NAME	SALARY	JOINING_DATE	DEPARTMENT
 1	Monika	Arora	100000	2021-02-20 09:00:00	HR
-Q-44. Write an SQL query to fetch the last five records from a table.
+### Q-44. Write an SQL query to fetch the last five records from a table.
 Ans.
 
 The required query is:
 
-Query #44
+### Query #44
 RunShow Solution
 -- Solution 1
 ```sql
@@ -980,12 +980,12 @@ Details
 6	Vipul	Diwan	200000	2021-06-11 09:00:00	Account
 5	Vivek	Bhati	500000	2021-06-11 09:00:00	Admin
 4	Amitabh	Singh	500000	2021-02-20 09:00:00	Admin
-Q-45. Write an SQL query to print the names of employees having the highest salary in each department.
+### Q-45. Write an SQL query to print the names of employees having the highest salary in each department.
 Ans.
 
 The required query is:
 
-Query #45
+### Query #45
 RunShow Solution
 ```sql
 SELECT t.DEPARTMENT, t.FIRST_NAME, t.Salary from (SELECT max(Salary) as TotalSalary, DEPARTMENT from Worker group by DEPARTMENT) as TempNew Inner Join Worker t on TempNew.DEPARTMENT = t.DEPARTMENT and TempNew.TotalSalary = t.Salary;
@@ -997,12 +997,12 @@ HR	Vishal	300000
 Admin	Amitabh	500000
 Admin	Vivek	500000
 Account	Vipul	200000
-Q-46. Write an SQL query to fetch three max salaries from a table.
+### Q-46. Write an SQL query to fetch three max salaries from a table.
 Ans.
 
 The required query is:
 
-Query #46
+### Query #46
 RunShow Solution
 ```sql
 SELECT distinct Salary from Worker a WHERE 3 >= (SELECT count(distinct Salary) from Worker b WHERE a.Salary <= b.Salary) order by a.Salary desc;
@@ -1015,12 +1015,12 @@ SALARY
 200000
 
 
-Q-47. Write an SQL query to fetch three min salaries from a table.
+### Q-47. Write an SQL query to fetch three min salaries from a table.
 Ans.
 
 The required query is:
 
-Query #47
+### Query #47
 RunShow Solution
 ```sql
 SELECT distinct Salary from Worker a WHERE 3 >= (SELECT count(distinct Salary) from Worker b WHERE a.Salary >= b.Salary) order by a.Salary desc;
@@ -1031,12 +1031,12 @@ SALARY
 90000
 80000
 75000
-Q-48. Write an SQL query to fetch nth max salaries from a table.
+### Q-48. Write an SQL query to fetch nth max salaries from a table.
 Ans.
 
 The required query is:
 
-Query #48
+### Query #48
 RunShow Solution
 ```sql
 -- Set the value of n
@@ -1052,13 +1052,13 @@ SALARY
 200000
 100000
 90000
-Q-49. Write an SQL query to fetch departments along with the total salaries paid for each of them.
+### Q-49. Write an SQL query to fetch departments along with the total salaries paid for each of them.
 Ans.
 
 
 The required query is:
 
-Query #49
+### Query #49
 RunShow Solution
 ```sql
 SELECT DEPARTMENT, sum(Salary) from Worker group by DEPARTMENT;
@@ -1069,12 +1069,12 @@ DEPARTMENT	sum(Salary)
 Account	275000
 Admin	1170000
 HR	400000
-Q-50. Write an SQL query to fetch the names of workers who earn the highest salary.
+### Q-50. Write an SQL query to fetch the names of workers who earn the highest salary.
 Ans.
 
 The required query is:
 
-Query #50
+### Query #50
 RunShow Solution
 ```sql
 SELECT FIRST_NAME, SALARY from Worker WHERE SALARY=(SELECT max(SALARY) from Worker);
