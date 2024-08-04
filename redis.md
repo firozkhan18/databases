@@ -1,6 +1,11 @@
 # Redis
 ---
 
+### Table Of Contents
+
+<details>
+ <summary><b>Introduction to Redis</b></summary>
+
 ### Introduction to Redis
 
 Redis, developed in 2009, is a flexible, open-source (BSD licensed), in-memory data structure store, used as database, cache, and message broker. Following in the footsteps of other NoSQL databases, such as Cassandra, CouchDB, and MongoDB, Redis allows the user to store vast amounts of data without the limits of a relational database.
@@ -86,9 +91,8 @@ Here is a list of features we have included in all of the chapters :
 5. Pictorial presentation to help you to understand the concept better.
 
 6. You may refer Redis Manual along with this tutorial.
-
-### Table Of Contents
-
+   
+</details>
 <details>
  <summary><b>Install Redis on Windows</b></summary>
 
