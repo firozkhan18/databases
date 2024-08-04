@@ -1172,3 +1172,951 @@ db.restaurants.aggregate([
 ```
 
 These queries cover a wide range of use cases for working with MongoDB collections of restaurant data. Let me know if you need further assistance!
+
+MongoDB Exercises: listingsAndReviews collection
+Last update on May 29 2023 20:36:23 (UTC/GMT +8 hours)
+
+ MongoDB Query Exercises and Solution : listingsAndReviews collection - 50 Exercises
+
+Sample document of 'listingsAndReviews' collection:
+
+  {
+    _id: '10059872',
+    listing_url: 'https://www.airbnb.com/rooms/10059872',
+    name: 'Soho Cozy, Spacious and Convenient',
+    summary: 'Clean, fully furnish, Spacious 1 bedroom flat just off the escalator in Mid Levels. 2 minutes From Soho Bar and Restaurants. Located in a quiet alley 1 minute from Sun Yat Sen',
+    space: '',
+    description: 'Clean, fully furnish, Spacious 1 bedroom flat just off the escalator in Mid Levels. 2 minutes From Soho Bar and Restaurants. Located in a quiet alley 1 minute from Sun Yat Sen',
+    neighborhood_overview: '',
+    notes: '',
+    transit: '',
+    access: '',
+    interaction: '',
+    house_rules: '',
+    property_type: 'Apartment',
+    room_type: 'Entire home/apt',
+    bed_type: 'Real Bed',
+    minimum_nights: '4',
+    maximum_nights: '20',
+    cancellation_policy: 'flexible',
+    last_scraped: ISODate("2019-03-11T04:00:00.000Z"),
+    calendar_last_scraped: ISODate("2019-03-11T04:00:00.000Z"),
+    first_review: ISODate("2015-12-19T05:00:00.000Z"),
+    last_review: ISODate("2018-03-27T04:00:00.000Z"),
+    accommodates: 3,
+    bedrooms: 1,
+    beds: 2,
+    number_of_reviews: 3,
+    bathrooms: Decimal128("1.0"),
+    amenities: [
+      'Air conditioning',
+      'Kitchen',
+      'Smoking allowed',
+      'Doorman',
+      'Elevator',
+      'Heating',
+      'Family/kid friendly',
+      'Essentials',
+      '24-hour check-in',
+      'translation missing: en.hosting_amenity_50'
+    ],
+    price: Decimal128("699.00"),
+    weekly_price: Decimal128("5000.00"),
+    extra_people: Decimal128("0.00"),
+    guests_included: Decimal128("1"),
+    images: {
+      thumbnail_url: '',
+      medium_url: '',
+      picture_url: 'https://a0.muscache.com/im/pictures/4533a1dc-6fd8-4167-938d-391c6eebbc19.jpg?aki_policy=large',
+      xl_picture_url: ''
+    },
+    host: {
+      host_id: '51624384',
+      host_url: 'https://www.airbnb.com/users/show/51624384',
+      host_name: 'Giovanni',
+      host_location: 'Hong Kong, Hong Kong',
+      host_about: '',
+      host_thumbnail_url: 'https://a0.muscache.com/im/pictures/264b82a7-756f-4da8-b607-dc9759e2a10f.jpg?aki_policy=profile_small',
+      host_picture_url: 'https://a0.muscache.com/im/pictures/264b82a7-756f-4da8-b607-dc9759e2a10f.jpg?aki_policy=profile_x_medium',
+      host_neighbourhood: 'Soho',
+      host_is_superhost: false,
+      host_has_profile_pic: true,
+      host_identity_verified: false,
+      host_listings_count: 1,
+      host_total_listings_count: 1,
+      host_verifications: [ 'email', 'phone', 'reviews', 'jumio', 'government_id' ]
+    },
+    address: {
+      street: 'Hong Kong, Hong Kong Island, Hong Kong',
+      suburb: 'Central & Western District',
+      government_area: 'Central & Western',
+      market: 'Hong Kong',
+      country: 'Hong Kong',
+      country_code: 'HK',
+      location: {
+        type: 'Point',
+        coordinates: [ 114.15027, 22.28158 ],
+        is_location_exact: true
+      }
+    },
+    availability: {
+      availability_30: 0,
+      availability_60: 0,
+      availability_90: 0,
+      availability_365: 0
+    },
+    review_scores: {
+      review_scores_accuracy: 10,
+      review_scores_cleanliness: 10,
+      review_scores_checkin: 10,
+      review_scores_communication: 10,
+      review_scores_location: 10,
+      review_scores_value: 8,
+      review_scores_rating: 100
+    },
+    reviews: [
+      {
+        _id: '56904633',
+        date: ISODate("2015-12-19T05:00:00.000Z"),
+        listing_id: '10059872',
+        reviewer_id: '5302612',
+        reviewer_name: 'Octavio',
+        comments: 'The host canceled this reservation 11 days before arrival. This is an automated posting.'
+      },
+      {
+        _id: '223175530',
+        date: ISODate("2018-01-01T05:00:00.000Z"),
+        listing_id: '10059872',
+        reviewer_id: '48436743',
+        reviewer_name: 'Ross',
+        comments: 'Giovanni was very helpful and responsive to my questions. This is a great apartment that is very convenient for exploring Hong Kong.'
+      },
+      {
+        _id: '247251577',
+        date: ISODate("2018-03-27T04:00:00.000Z"),
+        listing_id: '10059872',
+        reviewer_id: '111288273',
+        reviewer_name: 'Christian',
+        comments: 'The host canceled this reservation 8 days before arrival. This is an automated posting.'
+      }
+    ]
+  },
+
+You may download the compressed file and uncompress it to find the collection used in our exercises. The collection comprises of 2000 documents.
+
+1. Find the price per night of the first record in the listingsAndReviews collection.
+
+2. Retrieve the cleaning fee of the first record in the listingsAndReviews collection.
+
+3. Find the host_name, host_location, host_about of the first record in the listingsAndReviews collection.
+
+4. Retrieve the number of bedrooms in the first record in the listingsAndReviews collection.
+
+5. Retrieve the number of guests are included in the first record in the listingsAndReviews collection.
+
+6. Write a MongoDB query to check whether the host have a profile picture in the first record in the listingsAndReviews collection.
+
+7. Write a MongoDB query to check whether the host's identity have been verified in the first record in the listingsAndReviews collection.
+
+8. Write a MongoDB query to find how many listings does the host have in the first records in the listingsAndReviews collection.
+
+9. Write a MongoDB query to find the street address of the first record in the listingsAndReviews collection.
+
+10. Find all the listings in the listingsAndReviews collection where the property_type field is set to "House".
+
+11. Find all the listings in the listingsAndReviews collection with listing_url, name, host_name, host_location, reviewer_name and price that have a nightly price greater than $500.
+
+12. Find all the listings in the listingsAndReviews collection that are located in Brazil and have a review score rating of at least 9. Return name, address, and review_scores_rating.
+
+13. Find all the listings with name, address, reviewer_name, and review_scores_rating in the listingsAndReviews collection that have a "hot tub" amenity and are located in the United States.
+
+14. Find all the listings with name, amenities and price in the listingsAndReviews collection that have a "pool" amenity and a nightly price between $200 and $400.
+
+15. Find all the listings with name, amenities and address in the listingsAndReviews collection that have a "Washer" amenity and are located in either Canada or Mexico.
+
+16. Find the top 10 most reviewed listings with listing_url, name, country, review_scoresin the listingsAndReviews collection.
+
+17. Find all the listings with listing_url, name, address and review_scores in the listingsAndReviews collection that have a "fireplace" amenity and a review score rating of at least 8.
+
+18. Find all the listings with listing_url, name, address and amenities, review scores in the listingsAndReviews collection that have a "washer" amenity and are located in either Italy or Spain.
+
+19. Find the listings with listing_url, name, address and amenities, price, review scores in the listingsAndReviews collection that have the highest nightly prices.
+
+20. Find the listings with listing_url, name, address and amenities,price,review scores in the listingsAndReviews collection that have the lowest nightly prices.
+
+21. Retrieve all documents with name, address, reviewer_name, review_scores_ratingin the listingsAndReviewscollection that have a number_of_reviews field is equal to 0.
+
+22. Retrieve all documents with name, address, host, reviewer_name, review_scores_ratingin the listingsAndReviews collection where the host_is_superhost field is equal to true.
+
+23. Retrieve all documents with name, address, host, reviewer_name, review_scores_ratingin the listingsAndReviews collection where the coordinates field is not null.
+
+24. Retrieve all documents with name, address, host, bed_type, bed, review_scores_ratingfrom the listingsAndReviewscollection where the beds field is greater than or equal to 2.
+
+25. Find all listings with name, address, host in the listingsAndReviews collection that have a host with a host_name containing the word "Livia".
+
+26. Find all listings with name, address, host in the listingsAndReviews collection that have a host with a host_location of "Brazil".
+
+27. Retrieve all documents with name, address, host, availability in the listingsAndReviews collection where the availability_365 field is greater than 300.
+
+28. Retrieve all documents with listing_url, name, bedrooms, pricein the listingsAndReviews collectionwhere the bedrooms field is equal to 1.
+
+29. Retrieve all documents with listing_url, name, bedrooms, cleaning_fee, and price in the listingsAndReviews collectionwhere the cleaning_fee field is not null.
+
+30. Retrieve all documents with listing_url, name, bedrooms, pricein the listingsAndReviews collection where the price field is between 600 and 900.
+
+31. Retrieve all documents with listing_url, name, host, price in the listingsAndReviews collection where the host_verifications array contains "email".
+
+32. Retrieve all documents with listing_url, name, amenity, host in the listingsAndReviews collection where the amenities array contains both "TV" and "Wifi".
+
+33. Find all listings with listing_url, name, amenities, host in the listingsAndReviewscollection that have a host with a Jumio verification and a about section.
+
+34. Retrieve all documents with listing_url, name, host, price in the listingsAndReviews collection where the host_total_listings_count field is greater than 1.
+
+35. Retrieve all documents with listing_url, name, property_type, bed, price in the listingsAndReviewscollectionwhere the property_type field is equal to "Apartment" and the beds field is greater than or equal to 2.
+
+36. Find all listings with listing_url, name, property_type, bed, bathrooms, price in the listingsAndReviews collection that have a minimum of 2 bathrooms.
+
+37. Find all listings with listing_url, name, property_type, bed, price, guests_included in the listingsAndReviews collection that have a maximum of 5 guests included in the price.
+
+38. Find all listings with listing_url, name, property_type, bed, price, security_deposit in the listingsAndReviews collection that have a price greater than $500 and a security deposit of $1000 or more.
+
+39. Find all listings with listing_url, name, property_type, bed, price, cancellation_policy in the listingsAndReviews collection that have a cancellation policy of "flexible".
+
+40. Find all listings with listing_url, name, property_type, bed_type, amenities, price in the listingsAndReviews collection that have a real bed as the bed type and a kitchen amenity.
+
+41. Find all listings with listing_url, name, address, amenities in the listingsAndReviews collection that have a 24-hour check-in amenity and are located in Brazil.
+
+42. Find all listings with listing_url, name, address, reviews in the listingsAndReviews collection that have at least one review.
+
+43. Find the number of documents that have a blank medium picture url in the istingsAndReviews collection.
+
+44. Find all listings with listing_url, name, address, availability_30 in the istingsAndReviews collection that have an availability of at least 30 days.
+
+45. Find all listings with listing_url, name, address in the listingsAndReviews collection that have a suburb of "Lagoa".
+
+46. Find all listings with listing_url, name, address, host in the listingsAndReviews collection that have a host who is a superhost and has at least 2 listings.
+
+47. Find all listings with listing_url, name, address, host in the listingsAndReviews collection that have a host who has a profile pic and has been identity verified.
+
+48. Write a  mongodb query to find the listing_url, name, address, host_verifications, and size of host_verification under the host subdocument in the listingsAndReviews collection.
+
+49. Find all listings with listing_url, name, address, host_verificationand size of host_verification array in the listingsAndReviews collection that have a host with at least 3 verifications.
+
+50. Find all listings with listing_url, name, address, host_picture_url in the listingsAndReviews collection that have a host with a picture url.
+Click me to see the solution
+
+Here are the MongoDB queries to address each of your requirements:
+
+### 1. Find the price per night of the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "price": 1, _id: 0 }).price
+```
+
+### 2. Retrieve the cleaning fee of the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "cleaning_fee": 1, _id: 0 }).cleaning_fee
+```
+
+### 3. Find the `host_name`, `host_location`, and `host_about` of the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "host.host_name": 1, "host.host_location": 1, "host.host_about": 1, _id: 0 })
+```
+
+### 4. Retrieve the number of bedrooms in the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "bedrooms": 1, _id: 0 }).bedrooms
+```
+
+### 5. Retrieve the number of guests included in the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "guests_included": 1, _id: 0 }).guests_included
+```
+
+### 6. Write a MongoDB query to check whether the host has a profile picture in the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "host.host_picture_url": 1, _id: 0 }).host.host_picture_url !== undefined
+```
+
+### 7. Write a MongoDB query to check whether the host's identity has been verified in the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "host.host_verifications": 1, _id: 0 }).host.host_verifications && db.listingsAndReviews.findOne({}, { "host.host_verifications": 1, _id: 0 }).host.host_verifications.length > 0
+```
+
+### 8. Write a MongoDB query to find how many listings the host has in the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "host.host_total_listings_count": 1, _id: 0 }).host.host_total_listings_count
+```
+
+### 9. Write a MongoDB query to find the street address of the first record in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.findOne({}, { "address.street": 1, _id: 0 }).address.street
+```
+
+### 10. Find all the listings in the `listingsAndReviews` collection where the `property_type` field is set to "House".
+```javascript
+db.listingsAndReviews.find({ "property_type": "House" })
+```
+
+### 11. Find all the listings in the `listingsAndReviews` collection with `listing_url`, `name`, `host_name`, `host_location`, `reviewer_name`, and `price` that have a nightly price greater than $500.
+```javascript
+db.listingsAndReviews.find(
+  { "price": { $gt: 500 } },
+  { "listing_url": 1, "name": 1, "host.host_name": 1, "host.host_location": 1, "reviews.reviewer_name": 1, "price": 1, _id: 0 }
+)
+```
+
+### 12. Find all the listings in the `listingsAndReviews` collection that are located in Brazil and have a review score rating of at least 9. Return `name`, `address`, and `review_scores_rating`.
+```javascript
+db.listingsAndReviews.find(
+  { "address.country": "Brazil", "review_scores.review_scores_rating": { $gte: 9 } },
+  { "name": 1, "address": 1, "review_scores.review_scores_rating": 1, _id: 0 }
+)
+```
+
+### 13. Find all the listings with `name`, `address`, `reviewer_name`, and `review_scores_rating` in the `listingsAndReviews` collection that have a "hot tub" amenity and are located in the United States.
+```javascript
+db.listingsAndReviews.find(
+  { "address.country": "United States", "amenities": "hot tub" },
+  { "name": 1, "address": 1, "reviews.reviewer_name": 1, "review_scores.review_scores_rating": 1, _id: 0 }
+)
+```
+
+### 14. Find all the listings with `name`, `amenities`, and `price` in the `listingsAndReviews` collection that have a "pool" amenity and a nightly price between $200 and $400.
+```javascript
+db.listingsAndReviews.find(
+  { "amenities": "pool", "price": { $gte: 200, $lte: 400 } },
+  { "name": 1, "amenities": 1, "price": 1, _id: 0 }
+)
+```
+
+### 15. Find all the listings with `name`, `amenities`, and `address` in the `listingsAndReviews` collection that have a "Washer" amenity and are located in either Canada or Mexico.
+```javascript
+db.listingsAndReviews.find(
+  { "amenities": "Washer", "address.country": { $in: ["Canada", "Mexico"] } },
+  { "name": 1, "amenities": 1, "address": 1, _id: 0 }
+)
+```
+
+### 16. Find the top 10 most reviewed listings with `listing_url`, `name`, `country`, and `review_scores` in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.aggregate([
+  { $unwind: "$reviews" },
+  { $group: { _id: "$listing_url", name: { $first: "$name" }, country: { $first: "$address.country" }, review_scores: { $first: "$review_scores" }, review_count: { $sum: 1 } } },
+  { $sort: { review_count: -1 } },
+  { $limit: 10 },
+  { $project: { listing_url: 1, name: 1, country: 1, review_scores: 1, _id: 0 } }
+])
+```
+
+### 17. Find all the listings with `listing_url`, `name`, `address`, and `review_scores` in the `listingsAndReviews` collection that have a "fireplace" amenity and a review score rating of at least 8.
+```javascript
+db.listingsAndReviews.find(
+  { "amenities": "fireplace", "review_scores.review_scores_rating": { $gte: 8 } },
+  { "listing_url": 1, "name": 1, "address": 1, "review_scores": 1, _id: 0 }
+)
+```
+
+### 18. Find all the listings with `listing_url`, `name`, `address`, `amenities`, and `review_scores` in the `listingsAndReviews` collection that have a "washer" amenity and are located in either Italy or Spain.
+```javascript
+db.listingsAndReviews.find(
+  { "amenities": "washer", "address.country": { $in: ["Italy", "Spain"] } },
+  { "listing_url": 1, "name": 1, "address": 1, "amenities": 1, "review_scores": 1, _id: 0 }
+)
+```
+
+### 19. Find the listings with `listing_url`, `name`, `address`, `amenities`, `price`, and `review_scores` in the `listingsAndReviews` collection that have the highest nightly prices.
+```javascript
+db.listingsAndReviews.find().sort({ "price": -1 }).limit(1).project({ "listing_url": 1, "name": 1, "address": 1, "amenities": 1, "price": 1, "review_scores": 1, _id: 0 })
+```
+
+### 20. Find the listings with `listing_url`, `name`, `address`, `amenities`, `price`, and `review_scores` in the `listingsAndReviews` collection that have the lowest nightly prices.
+```javascript
+db.listingsAndReviews.find().sort({ "price": 1 }).limit(1).project({ "listing_url": 1, "name": 1, "address": 1, "amenities": 1, "price": 1, "review_scores": 1, _id: 0 })
+```
+
+### 21. Retrieve all documents with `name`, `address`, `reviewer_name`, and `review_scores_rating` in the `listingsAndReviews` collection that have a `number_of_reviews` field equal to 0.
+```javascript
+db.listingsAndReviews.find(
+  { "number_of_reviews": 0 },
+  { "name": 1, "address": 1, "reviews.reviewer_name": 1, "review_scores.review_scores_rating": 1, _id: 0 }
+)
+```
+
+### 22. Retrieve all documents with `name`, `address`, `host`, `reviewer_name`, and `review
+
+_scores_rating` in the `listingsAndReviews` collection where the `host_is_superhost` field is equal to `true`.
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_is_superhost": true },
+  { "name": 1, "address": 1, "host": 1, "reviews.reviewer_name": 1, "review_scores.review_scores_rating": 1, _id: 0 }
+)
+```
+
+### 23. Retrieve all documents with `name`, `address`, `host`, `bed_type`, `bed`, and `review_scores_rating` from the `listingsAndReviews` collection where the `beds` field is greater than or equal to 2.
+```javascript
+db.listingsAndReviews.find(
+  { "beds": { $gte: 2 } },
+  { "name": 1, "address": 1, "host": 1, "bed_type": 1, "beds": 1, "review_scores.review_scores_rating": 1, _id: 0 }
+)
+```
+
+### 24. Find all listings with `name`, `address`, `host` in the `listingsAndReviews` collection that have a host with a `host_name` containing the word "Livia".
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_name": /Livia/ },
+  { "name": 1, "address": 1, "host": 1, _id: 0 }
+)
+```
+
+### 25. Find all listings with `name`, `address`, `host` in the `listingsAndReviews` collection that have a host with a `host_location` of "Brazil".
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_location": "Brazil" },
+  { "name": 1, "address": 1, "host": 1, _id: 0 }
+)
+```
+
+### 26. Retrieve all documents with `name`, `address`, `host`, and `availability` in the `listingsAndReviews` collection where the `availability_365` field is greater than 300.
+```javascript
+db.listingsAndReviews.find(
+  { "availability_365": { $gt: 300 } },
+  { "name": 1, "address": 1, "host": 1, "availability_365": 1, _id: 0 }
+)
+```
+
+### 27. Retrieve all documents with `listing_url`, `name`, `bedrooms`, and `price` in the `listingsAndReviews` collection where the `bedrooms` field is equal to 1.
+```javascript
+db.listingsAndReviews.find(
+  { "bedrooms": 1 },
+  { "listing_url": 1, "name": 1, "bedrooms": 1, "price": 1, _id: 0 }
+)
+```
+
+### 28. Retrieve all documents with `listing_url`, `name`, `bedrooms`, `cleaning_fee`, and `price` in the `listingsAndReviews` collection where the `cleaning_fee` field is not null.
+```javascript
+db.listingsAndReviews.find(
+  { "cleaning_fee": { $ne: null } },
+  { "listing_url": 1, "name": 1, "bedrooms": 1, "cleaning_fee": 1, "price": 1, _id: 0 }
+)
+```
+
+### 29. Retrieve all documents with `listing_url`, `name`, `bedrooms`, and `price` in the `listingsAndReviews` collection where the `price` field is between $600 and $900.
+```javascript
+db.listingsAndReviews.find(
+  { "price": { $gte: 600, $lte: 900 } },
+  { "listing_url": 1, "name": 1, "bedrooms": 1, "price": 1, _id: 0 }
+)
+```
+
+### 30. Retrieve all documents with `listing_url`, `name`, `host`, and `price` in the `listingsAndReviews` collection where the `host_verifications` array contains "email".
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_verifications": "email" },
+  { "listing_url": 1, "name": 1, "host": 1, "price": 1, _id: 0 }
+)
+```
+
+### 31. Retrieve all documents with `listing_url`, `name`, `amenity`, and `host` in the `listingsAndReviews` collection where the `amenities` array contains both "TV" and "Wifi".
+```javascript
+db.listingsAndReviews.find(
+  { "amenities": { $all: ["TV", "Wifi"] } },
+  { "listing_url": 1, "name": 1, "amenities": 1, "host": 1, _id: 0 }
+)
+```
+
+### 32. Find all listings with `listing_url`, `name`, `amenities`, `host` in the `listingsAndReviews` collection that have a host with a Jumio verification and an `about` section.
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_verifications": "jumio", "host.host_about": { $exists: true } },
+  { "listing_url": 1, "name": 1, "amenities": 1, "host": 1, _id: 0 }
+)
+```
+
+### 33. Retrieve all documents with `listing_url`, `name`, `host`, and `price` in the `listingsAndReviews` collection where the `host_total_listings_count` field is greater than 1.
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_total_listings_count": { $gt: 1 } },
+  { "listing_url": 1, "name": 1, "host": 1, "price": 1, _id: 0 }
+)
+```
+
+### 34. Retrieve all documents with `listing_url`, `name`, `property_type`, `bed`, and `price` in the `listingsAndReviews` collection where the `property_type` field is equal to "Apartment" and the `beds` field is greater than or equal to 2.
+```javascript
+db.listingsAndReviews.find(
+  { "property_type": "Apartment", "beds": { $gte: 2 } },
+  { "listing_url": 1, "name": 1, "property_type": 1, "beds": 1, "price": 1, _id: 0 }
+)
+```
+
+### 35. Find all listings with `listing_url`, `name`, `property_type`, `bed`, `bathrooms`, and `price` in the `listingsAndReviews` collection that have a minimum of 2 bathrooms.
+```javascript
+db.listingsAndReviews.find(
+  { "bathrooms": { $gte: 2 } },
+  { "listing_url": 1, "name": 1, "property_type": 1, "beds": 1, "bathrooms": 1, "price": 1, _id: 0 }
+)
+```
+
+### 36. Find all listings with `listing_url`, `name`, `property_type`, `bed`, `price`, and `guests_included` in the `listingsAndReviews` collection that have a maximum of 5 guests included in the price.
+```javascript
+db.listingsAndReviews.find(
+  { "guests_included": { $lte: 5 } },
+  { "listing_url": 1, "name": 1, "property_type": 1, "beds": 1, "price": 1, "guests_included": 1, _id: 0 }
+)
+```
+
+### 37. Find all listings with `listing_url`, `name`, `property_type`, `bed`, `price`, and `security_deposit` in the `listingsAndReviews` collection that have a price greater than $500 and a security deposit of $1000 or more.
+```javascript
+db.listingsAndReviews.find(
+  { "price": { $gt: 500 }, "security_deposit": { $gte: 1000 } },
+  { "listing_url": 1, "name": 1, "property_type": 1, "beds": 1, "price": 1, "security_deposit": 1, _id: 0 }
+)
+```
+
+### 38. Find all listings with `listing_url`, `name`, `property_type`, `bed`, `price`, and `cancellation_policy` in the `listingsAndReviews` collection that have a cancellation policy of "flexible".
+```javascript
+db.listingsAndReviews.find(
+  { "cancellation_policy": "flexible" },
+  { "listing_url": 1, "name": 1, "property_type": 1, "beds": 1, "price": 1, "cancellation_policy": 1, _id: 0 }
+)
+```
+
+### 39. Find all listings with `listing_url`, `name`, `property_type`, `bed_type`, `amenities`, and `price` in the `listingsAndReviews` collection that have a real bed as the bed type and a kitchen amenity.
+```javascript
+db.listingsAndReviews.find(
+  { "bed_type": "Real Bed", "amenities": "kitchen" },
+  { "listing_url": 1, "name": 1, "
+
+property_type": 1, "bed_type": 1, "amenities": 1, "price": 1, _id: 0 }
+)
+```
+
+### 40. Find all listings with `listing_url`, `name`, `address`, and `amenities` in the `listingsAndReviews` collection that have a 24-hour check-in amenity and are located in Brazil.
+```javascript
+db.listingsAndReviews.find(
+  { "amenities": "24-hour check-in", "address.country": "Brazil" },
+  { "listing_url": 1, "name": 1, "address": 1, "amenities": 1, _id: 0 }
+)
+```
+
+### 41. Find all listings with `listing_url`, `name`, `address`, and `reviews` in the `listingsAndReviews` collection that have at least one review.
+```javascript
+db.listingsAndReviews.find(
+  { "reviews": { $exists: true, $ne: [] } },
+  { "listing_url": 1, "name": 1, "address": 1, "reviews": 1, _id: 0 }
+)
+```
+
+### 42. Find the number of documents that have a blank medium picture URL in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.countDocuments({ "medium_picture_url": "" })
+```
+
+### 43. Find all listings with `listing_url`, `name`, `address`, and `availability_30` in the `listingsAndReviews` collection that have an availability of at least 30 days.
+```javascript
+db.listingsAndReviews.find(
+  { "availability_30": { $gte: 30 } },
+  { "listing_url": 1, "name": 1, "address": 1, "availability_30": 1, _id: 0 }
+)
+```
+
+### 44. Find all listings with `listing_url`, `name`, `address` in the `listingsAndReviews` collection that have a suburb of "Lagoa".
+```javascript
+db.listingsAndReviews.find(
+  { "address.suburb": "Lagoa" },
+  { "listing_url": 1, "name": 1, "address": 1, _id: 0 }
+)
+```
+
+### 45. Find all listings with `listing_url`, `name`, `address`, and `host` in the `listingsAndReviews` collection that have a host who is a superhost and has at least 2 listings.
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_is_superhost": true, "host.host_total_listings_count": { $gte: 2 } },
+  { "listing_url": 1, "name": 1, "address": 1, "host": 1, _id: 0 }
+)
+```
+
+### 46. Find all listings with `listing_url`, `name`, `address`, and `host` in the `listingsAndReviews` collection that have a host who has a profile picture and has been identity verified.
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_picture_url": { $exists: true }, "host.host_verifications": { $exists: true, $ne: [] } },
+  { "listing_url": 1, "name": 1, "address": 1, "host": 1, _id: 0 }
+)
+```
+
+### 47. Write a MongoDB query to find the `listing_url`, `name`, `address`, `host_verifications`, and size of `host_verification` under the host subdocument in the `listingsAndReviews` collection.
+```javascript
+db.listingsAndReviews.aggregate([
+  { $project: { listing_url: 1, name: 1, address: 1, "host_verifications": "$host.host_verifications", "verification_count": { $size: "$host.host_verifications" }, _id: 0 } }
+])
+```
+
+### 48. Find all listings with `listing_url`, `name`, `address`, `host_verifications`, and size of `host_verifications` array in the `listingsAndReviews` collection that have a host with at least 3 verifications.
+```javascript
+db.listingsAndReviews.aggregate([
+  { $match: { "host.host_verifications": { $exists: true, $not: { $size: 2 } } } },
+  { $project: { listing_url: 1, name: 1, address: 1, "host_verifications": "$host.host_verifications", "verification_count": { $size: "$host.host_verifications" }, _id: 0 } }
+])
+```
+
+### 49. Find all listings with `listing_url`, `name`, `address`, and `host_picture_url` in the `listingsAndReviews` collection that have a host with a picture URL.
+```javascript
+db.listingsAndReviews.find(
+  { "host.host_picture_url": { $exists: true } },
+  { "listing_url": 1, "name": 1, "address": 1, "host.host_picture_url": 1, _id: 0 }
+)
+```
+
+These queries should cover the needs outlined in your list. If there are any changes or additional requirements, let me know!
+
+MongoDB Exercises: Movies collection
+Last update on December 01 2023 05:35:11 (UTC/GMT +8 hours)
+
+ MongoDB Query Exercises and Solution : Movie collection - 28 Exercises
+
+Sample document of 'movies' collection:
+
+  {
+    _id: ObjectId("573a1390f29313caabcd42e8"),
+plot: 'A group of bandits stage a brazen train hold-up, only to find a determined posse hot on their heels.',
+genres: [ 'Short', 'Western' ],
+runtime: 11,
+cast: [
+      'A.C. Abadie',
+      "Gilbert M. 'Broncho Billy' Anderson",
+      'George Barnes',
+      'Justus D. Barnes'
+    ],
+poster: 'https://m.media-amazon.com/images/M/MV5BMTU3NjE5NzYtYTYyNS00MDVmLWIwYjgtMmYwYWIxZDYyNzU2XkEyXkFqcGdeQXVyNzQzNzQxNzI@._V1_SY1000_SX677_AL_.jpg',
+title: 'The Great Train Robbery',
+fullplot: "Among the earliest existing films in American cinema - notable as the first film that presented a narrative story to tell - it depicts a group of cowboy outlaws who hold up a train and rob the passengers. They are then pursued by a Sheriff's posse. Several scenes have color included - all hand tinted.",
+languages: [ 'English' ],
+released: ISODate("1903-12-01T00:00:00.000Z"),
+directors: [ 'Edwin S. Porter' ],
+rated: 'TV-G',
+awards: { wins: 1, nominations: 0, text: '1 win.' },
+lastupdated: '2015-08-13 00:27:59.177000000',
+year: 1903,
+imdb: { rating: 7.4, votes: 9847, id: 439 },
+countries: [ 'USA' ],
+type: 'movie',
+tomatoes: {
+viewer: { rating: 3.7, numReviews: 2559, meter: 75 },
+fresh: 6,
+critic: { rating: 7.6, numReviews: 6, meter: 100 },
+rotten: 0,
+lastUpdated: ISODate("2015-08-08T19:16:10.000Z")
+    }
+.....
+You may download the compressed file and uncompress it to find the collection used in our exercises. The collection comprises of 2000 documents.
+
+1. Find all movies with full information from the 'movies' collection that released in the year 1893.
+
+
+2. Find all movies with full information from the 'movies' collection that have a runtime greater than 120 minutes.
+
+
+3. Find all movies with full information from the 'movies' collection that have "Short" genre.
+
+
+4. Retrieve all movies from the 'movies' collection that were directed by "William K.L. Dickson" and include complete information for each movie.
+
+
+5. Retrieve all movies from the 'movies' collection that were released in the USA and include complete information for each movie.
+
+
+6. Retrieve all movies from the 'movies' collection that have complete information and are rated as "UNRATED".
+
+
+7. Retrieve all movies from the 'movies' collection that have complete information and have received more than 1000 votes on IMDb.
+
+
+8. Retrieve all movies from the 'movies' collection that have complete information and have an IMDb rating higher than 7.
+
+
+9. Retrieve all movies from the 'movies' collection that have complete information and have a viewer rating higher than 4 on Tomatoes.
+
+
+10. Retrieve all movies from the 'movies' collection that have received an award.
+
+
+11. Find all movies with title, languages, released, directors, writers, awards, year, genres, runtime, cast, countries from the 'movies' collection in  MongoDB that have at least one nomination.
+
+
+12. Find all movies with title, languages, released, directors, writers, awards, year, genres, runtime, cast, countries from the 'movies' collection in MongoDB with cast including "Charles Kayser".
+
+
+13. Retrieve all movies with title, languages, released, directors, writers, countries from the 'movies' collection in MongoDB that released on May 9, 1893.
+
+
+14. Retrieve all movies with title, languages, released, directors, writers, countries from the 'movies' collection in MongoDB that have a word "scene" in the title.
+
+
+
+15. Find all movies with title, languages, released, directors, viewer, writers, countries from the 'movies' collection in MongoDB that have a viewer rating of at least 3 and less than 4 on Tomatoes.
+
+
+16. Retrieve all movies with title, languages, released, year, directors, writers, countries from the 'movies' collection in  MongoDB that released before the year 1900.
+
+
+17. Find all movies with title, languages, fullplot, released, directors, writers, countries from the 'movies' collection in MongoDB that have a fullplot containing the word "fire".
+
+
+18. Return all movies with title, languages, plot, released, directors, writers, and countries from the 'movies' collection in MongoDB where the word "beer" mentioned in the plot.
+
+
+19. Return all movies with title, languages, fullplot, released, directors, writers, and countries from the 'movies' collection in MongoDB where the word "metal" mentioned in the fullplot.
+
+
+20. Find all movies with title, languages, released, runtime, directors, writers, countries from the 'movies' collection in  MongoDB that have a runtime between 60 and 90 minutes.
+
+
+21. Find all movies with title, languages, released, runtime, directors, writers, countries, imdb from the 'movies' collection in MongoDB for the top 5 movies with the highest IMDb ratings.
+
+
+22. Find all movies from the 'movies' collection in MongoDB with the average runtime of movies released in each country.
+
+
+23. Find from the 'movies' collection in MongoDB with the most common genre among the movies.
+
+
+24. Find the movies released in the year with the highest average IMDb rating from the 'movies' collection in MongoDB.
+
+
+25. Find the top 10 directors with the most movies from the 'movies' collection in  MongoDB.
+
+
+26. Write a query in MongoDB to find the average IMDb rating for movies with different ratings (e.g., 'PG', 'R', 'G') from the 'movies' collection.
+
+
+27. Write a query in MongoDB to find the oldest movie with an award win from the 'movies' collection.
+
+
+28. Write a query in MongoDB to find the movie with the highest IMDb rating and viewer rating on Tomatoes from the 'movies' collection.
+
+Here are the MongoDB queries for the given tasks:
+
+### 1. Find all movies with full information from the 'movies' collection that released in the year 1893.
+```javascript
+db.movies.find(
+  { "released": { $regex: "^1893" } }
+)
+```
+
+### 2. Find all movies with full information from the 'movies' collection that have a runtime greater than 120 minutes.
+```javascript
+db.movies.find(
+  { "runtime": { $gt: 120 } }
+)
+```
+
+### 3. Find all movies with full information from the 'movies' collection that have "Short" genre.
+```javascript
+db.movies.find(
+  { "genres": "Short" }
+)
+```
+
+### 4. Retrieve all movies from the 'movies' collection that were directed by "William K.L. Dickson" and include complete information for each movie.
+```javascript
+db.movies.find(
+  { "directors": "William K.L. Dickson" }
+)
+```
+
+### 5. Retrieve all movies from the 'movies' collection that were released in the USA and include complete information for each movie.
+```javascript
+db.movies.find(
+  { "countries": "USA" }
+)
+```
+
+### 6. Retrieve all movies from the 'movies' collection that have complete information and are rated as "UNRATED".
+```javascript
+db.movies.find(
+  { "rating": "UNRATED" }
+)
+```
+
+### 7. Retrieve all movies from the 'movies' collection that have complete information and have received more than 1000 votes on IMDb.
+```javascript
+db.movies.find(
+  { "votes": { $gt: 1000 } }
+)
+```
+
+### 8. Retrieve all movies from the 'movies' collection that have complete information and have an IMDb rating higher than 7.
+```javascript
+db.movies.find(
+  { "imdb.rating": { $gt: 7 } }
+)
+```
+
+### 9. Retrieve all movies from the 'movies' collection that have complete information and have a viewer rating higher than 4 on Tomatoes.
+```javascript
+db.movies.find(
+  { "tomatoes.viewer.rating": { $gt: 4 } }
+)
+```
+
+### 10. Retrieve all movies from the 'movies' collection that have received an award.
+```javascript
+db.movies.find(
+  { "awards": { $exists: true, $ne: "" } }
+)
+```
+
+### 11. Find all movies with title, languages, released, directors, writers, awards, year, genres, runtime, cast, countries from the 'movies' collection in MongoDB that have at least one nomination.
+```javascript
+db.movies.find(
+  { "awards.nominations": { $exists: true, $ne: [] } },
+  { "title": 1, "languages": 1, "released": 1, "directors": 1, "writers": 1, "awards": 1, "year": 1, "genres": 1, "runtime": 1, "cast": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 12. Find all movies with title, languages, released, directors, writers, awards, year, genres, runtime, cast, countries from the 'movies' collection in MongoDB with cast including "Charles Kayser".
+```javascript
+db.movies.find(
+  { "cast": "Charles Kayser" },
+  { "title": 1, "languages": 1, "released": 1, "directors": 1, "writers": 1, "awards": 1, "year": 1, "genres": 1, "runtime": 1, "cast": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 13. Retrieve all movies with title, languages, released, directors, writers, countries from the 'movies' collection in MongoDB that released on May 9, 1893.
+```javascript
+db.movies.find(
+  { "released": "1893-05-09" },
+  { "title": 1, "languages": 1, "released": 1, "directors": 1, "writers": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 14. Retrieve all movies with title, languages, released, directors, writers, countries from the 'movies' collection in MongoDB that have a word "scene" in the title.
+```javascript
+db.movies.find(
+  { "title": /scene/i },
+  { "title": 1, "languages": 1, "released": 1, "directors": 1, "writers": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 15. Find all movies with title, languages, released, directors, viewer, writers, countries from the 'movies' collection in MongoDB that have a viewer rating of at least 3 and less than 4 on Tomatoes.
+```javascript
+db.movies.find(
+  { "tomatoes.viewer.rating": { $gte: 3, $lt: 4 } },
+  { "title": 1, "languages": 1, "released": 1, "directors": 1, "writers": 1, "tomatoes.viewer.rating": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 16. Retrieve all movies with title, languages, released, year, directors, writers, countries from the 'movies' collection in MongoDB that released before the year 1900.
+```javascript
+db.movies.find(
+  { "year": { $lt: 1900 } },
+  { "title": 1, "languages": 1, "released": 1, "year": 1, "directors": 1, "writers": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 17. Find all movies with title, languages, fullplot, released, directors, writers, countries from the 'movies' collection in MongoDB that have a fullplot containing the word "fire".
+```javascript
+db.movies.find(
+  { "fullplot": /fire/i },
+  { "title": 1, "languages": 1, "fullplot": 1, "released": 1, "directors": 1, "writers": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 18. Return all movies with title, languages, plot, released, directors, writers, and countries from the 'movies' collection in MongoDB where the word "beer" mentioned in the plot.
+```javascript
+db.movies.find(
+  { "plot": /beer/i },
+  { "title": 1, "languages": 1, "plot": 1, "released": 1, "directors": 1, "writers": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 19. Return all movies with title, languages, fullplot, released, directors, writers, and countries from the 'movies' collection in MongoDB where the word "metal" mentioned in the fullplot.
+```javascript
+db.movies.find(
+  { "fullplot": /metal/i },
+  { "title": 1, "languages": 1, "fullplot": 1, "released": 1, "directors": 1, "writers": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 20. Find all movies with title, languages, released, runtime, directors, writers, countries from the 'movies' collection in MongoDB that have a runtime between 60 and 90 minutes.
+```javascript
+db.movies.find(
+  { "runtime": { $gte: 60, $lte: 90 } },
+  { "title": 1, "languages": 1, "released": 1, "runtime": 1, "directors": 1, "writers": 1, "countries": 1, _id: 0 }
+)
+```
+
+### 21. Find all movies with title, languages, released, runtime, directors, writers, countries, imdb from the 'movies' collection in MongoDB for the top 5 movies with the highest IMDb ratings.
+```javascript
+db.movies.find(
+  {},
+  { "title": 1, "languages": 1, "released": 1, "runtime": 1, "directors": 1, "writers": 1, "countries": 1, "imdb": 1 }
+).sort({ "imdb.rating": -1 }).limit(5)
+```
+
+### 22. Find all movies from the 'movies' collection in MongoDB with the average runtime of movies released in each country.
+```javascript
+db.movies.aggregate([
+  { $group: { _id: "$countries", average_runtime: { $avg: "$runtime" } } }
+])
+```
+
+### 23. Find the most common genre among the movies from the 'movies' collection in MongoDB.
+```javascript
+db.movies.aggregate([
+  { $unwind: "$genres" },
+  { $group: { _id: "$genres", count: { $sum: 1 } } },
+  { $sort: { count: -1 } },
+  { $limit: 1 }
+])
+```
+
+### 24. Find the movies released in the year with the highest average IMDb rating from the 'movies' collection in MongoDB.
+```javascript
+db.movies.aggregate([
+  { $group: { _id: "$year", average_rating: { $
+
+avg: "$imdb.rating" } } },
+  { $sort: { average_rating: -1 } },
+  { $limit: 1 },
+  { $lookup: {
+      from: "movies",
+      localField: "_id",
+      foreignField: "year",
+      as: "movies"
+    }
+  },
+  { $unwind: "$movies" },
+  { $replaceRoot: { newRoot: "$movies" } }
+])
+```
+
+### 25. Find the top 10 directors with the most movies from the 'movies' collection in MongoDB.
+```javascript
+db.movies.aggregate([
+  { $unwind: "$directors" },
+  { $group: { _id: "$directors", count: { $sum: 1 } } },
+  { $sort: { count: -1 } },
+  { $limit: 10 }
+])
+```
+
+### 26. Write a query in MongoDB to find the average IMDb rating for movies with different ratings (e.g., 'PG', 'R', 'G') from the 'movies' collection.
+```javascript
+db.movies.aggregate([
+  { $group: { _id: "$rating", average_rating: { $avg: "$imdb.rating" } } }
+])
+```
+
+### 27. Write a query in MongoDB to find the oldest movie with an award win from the 'movies' collection.
+```javascript
+db.movies.find(
+  { "awards": { $exists: true, $ne: "" } }
+).sort({ "released": 1 }).limit(1)
+```
+
+### 28. Write a query in MongoDB to find the movie with the highest IMDb rating and viewer rating on Tomatoes from the 'movies' collection.
+```javascript
+db.movies.find().sort({ "imdb.rating": -1, "tomatoes.viewer.rating": -1 }).limit(1)
+```
+
+Feel free to adjust the queries according to your collection's exact schema or additional requirements!
