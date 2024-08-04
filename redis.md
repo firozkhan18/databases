@@ -82,7 +82,7 @@ By following these steps, you can easily set up and run a Redis database on your
 
 This enables you to leverage Redis for various applications and projects seamlessly.
 
-<detai>
+<details>
   <summary><b>Redis Configuration</b></summary>
   
 ### Redis CONFIG Command
@@ -111,7 +111,7 @@ Use * in place of CONFIG_SETTING_NAME to get all configuration settings.
 
 ### Example:
 
-127.0.0.1:6379> CONFIG GET *
+> 127.0.0.1:6379> CONFIG GET *
   1) "dbfilename"
   2) "dump.rdb"
   3) "requirepass"
