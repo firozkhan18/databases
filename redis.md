@@ -263,3 +263,148 @@ OK
 1) "loglevel"
 2) "notice"
 </details>
+
+<details>
+ <summary><b>Redis Data Types</b></summary>
+
+### Data Types
+ Redis is not a plain  key-value store, actually, it is a data structures server, supporting a different kind of values. In traditional  key-value stores, you associated string keys to string values, in  Redis the value is not limited to a simple string, but can also hold more complex data structures. The following is the list of all the data structures supported by Redis:
+
+Binary-safe strings.
+Lists
+Sets
+Sorted sets
+Hashes
+Bit arrays (or simply bitmaps)
+HyperLogLogs:
+### Redis keys:
+
+Redis keys are binary safe (meaning they have a known length not determined by any special terminating characters), so you can use any binary sequence as a key, from a string like "foo" to the content of a JPEG file. The empty string is also a valid key. Here are some rules about keys:
+
+The maximum allowed key size is 512 MB.
+Very long keys are not a good idea.
+Very short keys are often not a good idea. While short keys will obviously consume a bit less memory, your job is to find the right balance.
+Try to stick with a schema. For instance "object-type:id" is a good idea, as in "user:1000". Dots or dashes are often used for multi-word fields, as in "comment:1234:reply.to" or "comment:1234:reply-to".
+### Redis Strings:
+
+Strings are  Redis’ most basic data type. It is the only data type in  Memcached, so it is also very natural for newcomers to use it in Redis. Since Redis keys are strings, when we use the string type as a value too, we are mapping a string to another string. The string data type is useful for a number of use cases, like caching HTML fragments or pages. Here are some common commands associated with strings:
+
+SET: sets a value to a key
+GET: gets a value from a key
+DEL: deletes a key and its value
+INCR: atomically increments a key
+INCRBY: increments a key by a designated values
+EXPIRE: the length of time that a key should exist (denoted in seconds)
+Strings can be used to store objects, arranged by key.
+
+127.0.0.1:6379>  SET newkey "the redis string"
+OK
+127.0.0.1:6379> GET newkey
+"the redis string"
+### Redis Lists:
+
+Lists in  Redis are a collection of ordered values. This is in contrast to Sets which are unordered. Redis lists are implemented via Linked Lists. This means that even if you have millions of elements inside a list, the operation of adding a new element in the head or in the tail of the list is performed in constant time. Here are some common commands associated with lists:
+
+LPUSH: Add a value to the begriming of a list
+RPUSH: Add a value to the end of a list
+LPOP: Get and remove the first element in a list
+RPOP: Get and remove the last element in a list
+LREM: Remove elements from a list
+LRANGE: Get a range of elements from a list
+LTRIM: Modifies a list so leave only a specified range
+### Example:
+
+redis 127.0.0.1:6379> lpush w3resourcelist redis
+(integer) 1
+redis 127.0.0.1:6379> lpush w3resourcelist mongodb
+(integer) 2
+redis 127.0.0.1:6379> lpush w3resourcelist rabitmq
+(integer) 3
+redis 127.0.0.1:6379> lrange w3resourcelist 0 10
+
+1) "rabitmq"
+2) "mongodb"
+3) "redis"
+### Redis Sets:
+
+ Redis Sets are unordered collections of strings. If you want to combine strings, you can do that with  REDIS sets. Here are some common commands associated with sets:
+
+SADD: Add one or members to a set
+SMEMBERS: Get all set members
+SINTER: Find the intersection of multiple sets
+SISMEMBER: check if a value is in a set
+SRANDMEMBER: Get a random set member
+Sets can be helpful in various situations. In sets each member of a set is unique, adding members to a set does not require a "check then add" operation. Instead the set will check whether the item is a duplicate whenever an SADD command is performed.
+
+### Example:
+
+redis 127.0.0.1:6379> sadd w3resourcelist redis
+(integer) 1
+redis 127.0.0.1:6379> sadd w3resourcelist mongodb
+(integer) 1
+redis 127.0.0.1:6379> sadd w3resourcelist rabitmq
+(integer) 1
+redis 127.0.0.1:6379> sadd w3resourcelist rabitmq
+(integer) 0
+redis 127.0.0.1:6379> smembers w3resourcelist
+
+1) "rabitmq"
+2) "mongodb"
+3) "redis"
+### Redis Sorted sets:
+
+
+Sorted sets are a data type which is similar to a mix between a Set and a Hash. Like sets, sorted sets are composed of unique, non-repeating string elements, so in some sense, a sorted set is a set as well.
+
+However, while elements inside sets are not ordered, every element in a sorted set is associated with a floating point value, called the score (this is why the type is also similar to a hash, since every element is mapped to a value). Here are some common commands associated with sorted sets :
+
+ZADD: Adds members to a sorted set
+ZRANGE: Displays the members of a sorted set arranged by index (with the default low to high)
+ZREVRANGE: Displays the members of a sorted set arranged by index (from high to low)
+ZREM: Removes members from a sorted set
+### Example:
+
+redis 127.0.0.1:6379> zadd w3resourcelist 0 redis
+(integer) 1
+redis 127.0.0.1:6379> zadd w3resourcelist 0 mongodb
+(integer) 1
+redis 127.0.0.1:6379> zadd w3resourcelist 0 rabitmq
+(integer) 1
+redis 127.0.0.1:6379> zadd w3resourcelist 0 rabitmq
+(integer) 0
+redis 127.0.0.1:6379> ZRANGEBYSCORE w3resourcelist 0 1000
+
+1) "redis"
+2) "mongodb"
+3) "rabitmq"
+### Redis Hashes:
+
+Hashes in  Redis are useful to represent objects with many fields. They are set up to store a vast amount of fields in a small amount of space. Here are some common commands associated with hashes:
+
+HMSET: Sets up multiple hash values
+HSET: Sets the hash field with a string value
+HGET: Retrieves the value of a hash field
+HMGET: Retrieves all of the values for given hash fields
+HGETALL: Retrieves all of the values for in a hash
+### Example:
+
+In the following example hash, data type is used to store user's object which contains basic information of a user.
+
+redis 127.0.0.1:6379> HMSET user:1 username w3resource password 123456 points 200
+OK
+redis 127.0.0.1:6379> HGETALL user:1
+
+1) "username"
+2) "w3resource"
+3) "password"
+4) "123456"
+5) "points"
+6) "200"
+### Redis Bit arrays (or simply bitmaps):
+
+It is possible, using special commands, to handle String values like an array of bits: you can set and clear individual bits, count all the bits set to 1, find the first set or unset bit, and so forth.
+
+HyperLogLogs:
+
+This is a probabilistic data structure which is used in order to estimate the cardinality of a set.
+</details>
