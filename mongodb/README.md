@@ -30,6 +30,7 @@ Structure of 'restaurants' collection:
 }
 You may download the compressed file and uncompress it to find the collection used in our exercises. The collection comprises of 3772 documents.
 
+https://www.mongodb.com/docs/atlas/sample-data/sample-restaurants/
 
 1. Write a MongoDB query to display all the documents in the collection restaurants.
 
