@@ -501,54 +501,253 @@ This is a probabilistic data structure which is used in order to estimate the ca
  <summary><b>Commands</summary>
   <details>
  <summary><b>Redis Keys</summary>
-Redis Keys
+DEL
+DUMP
+EXISTS
+EXPIRE
+EXPIREAT
+KEYS
+MOVE
+OBJECT
+PERSIST
+PEXPIRE
+PEXPIREAT
+PTTL
+RANDOMKEY
+RENAME
+RENAMENX
+RESTORE
+SCAN
+SORT
+TTL
+TYPE
+WAIT
  </details>
   <details>
  <summary><b>Redis Strings</summary>
-Redis Strings
+SET
+GET
+GETRANGE
+GETSET
+GETBIT
+MGET
+SETBIT
+SETEX
+SETNX
+SETRANGE
+STRLEN
+MSET
+MSETNX
+PSETEX
+INCR
+INCRBY
+INCRBYFLOAT
+DECR
+DECRBY
+APPEND
  </details>
     <details>
  <summary><b>Redis Hashes</summary>
-Redis Hashes
+HDEL
+HEXISTS
+HGET
+HGETALL
+HINCRBY
+HINCRBYFLOAT
+HKEYS
+HLEN
+HMGET
+HMSET
+HSET
+HSETNX
+HVALS
+HSCAN
  </details>
   <details>
  <summary><b>Redis Lists</summary>
-Redis Lists
+BLPOP
+BRPOP
+BRPOPLPUSH
+LINDEX
+LINSERT
+LLEN
+LPOP
+LPUSH
+LPUSHX
+LREM
+LSET
+LRANGE
+LTRIM
+RPOP
+RPOPLPUSH
+RPUSH
+RPUSHX
  </details>
     <details>
  <summary><b>Redis Sets</summary>
-Redis Sets
+SADD
+SCARD
+SDIFF
+SDIFFSTORE
+SINTER
+SINTERSTORE
+SISMEMBER
+SMEMBERS
+SMOVE
+SPOP
+SRANDMEMBER
+SREM
+SUNION
+SUNIONSTORE
+SSCAN
  </details>
   <details>
  <summary><b>Redis Sorted Sets</summary>
-Redis Sorted Sets
+ZADD
+ZCARD
+ZCOUNT
+ZINCRBY
+ZINTERSTORE
+ZLEXCOUNT
+ZRANGE
+ZRANGEBYLEX
+ZRANGEBYSCORE
+ZRANK
+ZREM
+ZREMRANGEBYLEX
+ZREMRANGEBYRANK
+ZREMRANGEBYSCORE
+ZREVRANGE
+ZREVRANGEBYLEX
+ZREVRANGEBYSCORE
+ZREVRANK
+ZSCORE
+ZUNIONSTORE
+ZSCAN
  </details>
     <details>
  <summary><b>Redis HyperLogLog</summary>
-Redis HyperLogLog
+PFADD
+PFCOUNT
+PFMERGE
  </details>
   <details>
  <summary><b>Redis Pub/Sub</summary>
-Redis Pub/Sub
+PSUBSCRIBE
+PUBSUB
+PUBLISH
+PUNSUBSCRIBE
+SUBSCRIBE
+UNSUBSCRIBE
  </details>
     <details>
  <summary><b>Redis Transactions</summary>
-Redis Transactions
+DISCARD
+EXEC
+MULTI
+UNWATCH
+WATCH
  </details>
   <details>
  <summary><b>Redis Scripting</summary>
-Redis Scripting
+EVAL
+EVALSHA
+SCRIPT EXISTS
+SCRIPT FLUSH
+SCRIPT KILL
+SCRIPT LOAD
  </details>
     <details>
  <summary><b>Redis Connection</summary>
-Redis Connection
+AUTH
+ECHO
+PING
+QUIT
+SELECT
  </details>
   <details>
  <summary><b>Redis Server</summary>
-Redis Server
+BGREWRITEAOF
+BGSAVE
+CLIENT KILL
+CLIENT LIST
+CLIENT GETNAME
+CLIENT PAUSE
+CLIENT SETNAME
+CLUSTER SLOTS
+COMMAND
+COMMAND COUNT
+COMMAND GETKEYS
+COMMAND INFO
+CONFIG GET
+CONFIG REWRITE
+CONFIG SET
+CONFIG RESETSTAT
+DBSIZE
+DEBUG OBJECT
+DEBUG SEGFAULT
+FLUSHALL
+FLUSHDB
+INFO
+LASTSAVE
+MONITOR
+ROLE
+SAVE
+SHUTDOWN
+SLAVEOF
+SLOWLOG
+SYNC
+TIM
  </details>
  </details>
 <details>
  <summary><b>Administration</summary>
-Backup and Restore
+
+### Redis Backup and Restore
+
+
+### Backup & Restore
+Redis SAVE command is used to create backup of current redis database. The SAVE commands performs a synchronous save of the dataset producing a point in time snapshot of all the data inside the Redis instance, in the form of an RDB file.
+
+### Syntax:
+
+> SAVE
+### Available since
+
+1.0.0
+
+Return value
+
+Simple string reply: The commands returns OK on success.
+
+### Example: Redis Backup
+
+The example given below creates the backup of the current database.
+
+> 127.0.0.1:6379> SAVE
+> OK
+This command will create the dump.rdb file in your redis directory.
+
+### Restore:
+
+### CONFIG GET
+
+To restore redis data just move redis backup file (dump.rdb) into your redis directory and start the server. To get your redis directory use CONFIG command can be used. The CONFIG GET command is used to read the configuration parameters of a running Redis server.
+
+> 127.0.0.1:6379> CONFIG get dir
+> 1) "dir"
+> 2) "/var/lib/redis/6379"
+
+In the output of above command "/var/lib/redis/6379" is the directory, where redis server is installed.
+
+### BGSAVE
+
+The alternate command to create a Redis backup is BGSAVE. This command is used to save the DB in the background. 
+
+### Example:
+
+> 127.0.0.1:6379> BGSAVE
+
+Background saving started
+
  </details>
