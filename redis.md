@@ -5,11 +5,15 @@ Redis, a powerful open-source in-memory data store, is widely used for various a
 Here's a step-by-step guide on how to set up and run Redis on Windows 10 using WSL2:
 
 ### Step 1: Enable Windows Subsystem for Linux (WSL2)
+
 Open PowerShell as Administrator and run the following command to enable WSL2:
+
 **`Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`**
+
 Reboot your system (this step is necessary only once).
 
 ### Step 2: Install Ubuntu from Microsoft Store
+
 Launch the Microsoft Store. Search for "Ubuntu" or your preferred Linux distribution. Download and install the latest version of Ubuntu.
 
 **`start ms-windows-store:`**
@@ -19,6 +23,7 @@ Launch the Microsoft Store. Search for "Ubuntu" or your preferred Linux distribu
 https://developer.redis.com/create/windows
 
 ### Step 3: Install and Configure Redis
+
 Launch the installed Ubuntu distribution. In the terminal, execute the following commands:
 ```
 sudo apt-add-repository ppa:redislabs/redis
@@ -29,11 +34,13 @@ sudo apt-get install redis-server
 **Note**: The sudo command might be required based on your system's user configuration.
 
 ### Step 4: Restart Redis Server
+
 After installation, restart the Redis server using:
 ```
 sudo service redis-server restart
 ```
 ### Step 5: Verify Redis Installation
+
 Test the Redis connectivity using the redis-cli command:
 ```
 redis-cli
@@ -46,6 +53,7 @@ Inside the Redis CLI, execute the following commands:
 You should see "Jane" as the output.
 
 ### Step 6: Stopping the Redis Server
+
 To stop the Redis server, use the following command:
 ```
 sudo service redis-server stop
