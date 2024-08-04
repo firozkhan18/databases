@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/148f8e8c-70ef-420a-b7ff-9fa33a5e644b)# Redis
+# Redis
 ---
 
 ### Table Of Contents
