@@ -26,7 +26,13 @@ Launch the Microsoft Store. Search for "Ubuntu" or your preferred Linux distribu
 
 https://developer.redis.com/create/windows
 
+![Setting the Scheme](redis/WLS2.PNG)
+
 ### Step 3: Install and Configure Redis
+
+![Setting the Scheme](redis/ubuntu.PNG)
+
+![Setting the Scheme](redis/redis-installation.PNG)
 
 Launch the installed Ubuntu distribution. In the terminal, execute the following commands:
 ```
@@ -39,11 +45,15 @@ sudo apt-get install redis-server
 
 ### Step 4: Restart Redis Server
 
+![Setting the Scheme](redis/redis-installation-1.PNG)
+
 After installation, restart the Redis server using:
 ```
 sudo service redis-server restart
 ```
 ### Step 5: Verify Redis Installation
+
+![Setting the Scheme](redis/redis-installation-2.PNG)
 
 Test the Redis connectivity using the redis-cli command:
 ```
