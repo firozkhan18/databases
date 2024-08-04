@@ -726,6 +726,7 @@ The example given below creates the backup of the current database.
 
 > 127.0.0.1:6379> SAVE
 > OK
+
 This command will create the dump.rdb file in your redis directory.
 
 ### Restore:
