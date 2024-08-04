@@ -1,4 +1,4 @@
-# Redis
+![image](https://github.com/user-attachments/assets/148f8e8c-70ef-420a-b7ff-9fa33a5e644b)# Redis
 ---
 
 ### Table Of Contents
@@ -353,7 +353,6 @@ OK
 1) "loglevel"
 2) "notice"
 </details>
-
 <details>
  <summary><b>Redis Data Types</b></summary>
 
@@ -498,3 +497,58 @@ It is possible, using special commands, to handle String values like an array of
 
 This is a probabilistic data structure which is used in order to estimate the cardinality of a set.
 </details>
+<details>
+ <summary><b>Commands</summary>
+  <details>
+ <summary><b>Redis Keys</summary>
+Redis Keys
+ </details>
+  <details>
+ <summary><b>Redis Strings</summary>
+Redis Strings
+ </details>
+    <details>
+ <summary><b>Redis Hashes</summary>
+Redis Hashes
+ </details>
+  <details>
+ <summary><b>Redis Lists</summary>
+Redis Lists
+ </details>
+    <details>
+ <summary><b>Redis Sets</summary>
+Redis Sets
+ </details>
+  <details>
+ <summary><b>Redis Sorted Sets</summary>
+Redis Sorted Sets
+ </details>
+    <details>
+ <summary><b>Redis HyperLogLog</summary>
+Redis HyperLogLog
+ </details>
+  <details>
+ <summary><b>Redis Pub/Sub</summary>
+Redis Pub/Sub
+ </details>
+    <details>
+ <summary><b>Redis Transactions</summary>
+Redis Transactions
+ </details>
+  <details>
+ <summary><b>Redis Scripting</summary>
+Redis Scripting
+ </details>
+    <details>
+ <summary><b>Redis Connection</summary>
+Redis Connection
+ </details>
+  <details>
+ <summary><b>Redis Server</summary>
+Redis Server
+ </details>
+ </details>
+<details>
+ <summary><b>Administration</summary>
+Backup and Restore
+ </details>
