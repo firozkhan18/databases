@@ -66,6 +66,8 @@ Inside the Redis CLI, execute the following commands:
 ```
 You should see "Jane" as the output.
 
+![Setting the Scheme](redis/verify-redis-installation.PNG)
+
 ### Step 6: Stopping the Redis Server
 
 To stop the Redis server, use the following command:
