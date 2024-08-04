@@ -494,7 +494,7 @@ redis 127.0.0.1:6379> HGETALL user:1
 
 It is possible, using special commands, to handle String values like an array of bits: you can set and clear individual bits, count all the bits set to 1, find the first set or unset bit, and so forth.
 
-HyperLogLogs:
+### HyperLogLogs:
 
 This is a probabilistic data structure which is used in order to estimate the cardinality of a set.
 </details>
