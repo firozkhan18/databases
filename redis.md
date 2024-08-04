@@ -57,18 +57,19 @@ Redis has built-in protections allowing the user to set a max limit to memory us
 
 You can easily build complex systems on top of Redis, here is a sample list :
 
-User defined indexing schemes
-Message queues with real time new element notification
-Directed and undirected graph stores for following or friending systems
-Real-time publish/subscribe notification systems
-Real-time analytics backends
-Bloom filter servers
-Task queues and job systems
-High score leaderboards
-User ranking systems
-Hierarchical/tree structured storage systems
-Individual personalized news or data feeds for your users
-Features of the w3resource Redis tutorials
+- User defined indexing schemes
+- Message queues with real time new element notification
+- Directed and undirected graph stores for following or friending systems
+- Real-time publish/subscribe notification systems
+- Real-time analytics backends
+- Bloom filter servers
+- Task queues and job systems
+- High score leaderboards
+- User ranking systems
+- Hierarchical/tree structured storage systems
+- Individual personalized news or data feeds for your users'
+  
+### Features of the w3resource Redis tutorials
 
 In this series of tutorials we have covered Redis 3.0.5 in detail. While creating this, we have take care that learners can master the basics of Redis.
 
