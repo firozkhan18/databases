@@ -1,4 +1,9 @@
-## Install Redis on Windows
+# Redis 
+
+## Table Of Contents
+
+<details>
+ <summary><b>Install Redis on Windows</b></summary>
 
 Redis, a powerful open-source in-memory data store, is widely used for various applications. 
 
@@ -81,7 +86,7 @@ Remember that while Redis databases by default have indexes from 0 to 15, you ca
 By following these steps, you can easily set up and run a Redis database on your Windows 10 machine using the Windows Subsystem for Linux. 
 
 This enables you to leverage Redis for various applications and projects seamlessly.
-
+</details>
 <details>
   <summary><b>Redis Configuration</b></summary>
   
