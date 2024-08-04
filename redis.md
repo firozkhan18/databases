@@ -1,6 +1,7 @@
-# Redis 
+# Redis
+---
 
-## Table Of Contents
+### Table Of Contents
 
 <details>
  <summary><b>Install Redis on Windows</b></summary>
